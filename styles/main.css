@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-family);
+  background: var(--main-bg-color);
+  color: var(--white);
+  font-size: var(--font-16);
+  line-height: 1.5;
+}
+
+:root {
+  /* Colors */
+  --main-bg-color: #254446;
+  --black: #061617;
+  --primary-color: #38c3cc;
+  --secondary-color: #ffaf1a;
+  --white: #f4feff;
+
+  /* Font */
+  --font-family: "Poppins", sans-serif;
+  --font-10: 10px;
+  --font-13: 13px;
+  --font-16: 16px;
+  --font-20: 20px;
+  --font-25: 25px;
+  --font-31: 31px;
+  --font-39: 39px;
+  --font-49: 49px;
+  --font-61: 61px;
+
+  /* Font Weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 14px;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: var(--white);
+  font-size: var(--font-16);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 1px;
+}
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  color: var(--white) !important;
+}
+
+.btn-outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 8px;
+  color: var(--white);
+  border: 1px solid var(--white);
+  font-size: var(--font-16);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 1px;
+}
+.btn-outline:hover {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color) !important;
+}
+
+/* Start Section */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hero-left h1 {
+  font-size: var(--font-61);
+  line-height: 100%;
+}
+
+.hero-left p {
+  font-size: var(--font-16);
+  color: var(--white);
+  line-height: 136%;
+}
+
+.hero-left ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-left li {
+  font-size: var(--font-20);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-right {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  color: black;
+  max-width: 450px;
+  width: 100%;
+}
+
+.hero-right input,
+.hero-right select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.hero-right button {
+  width: 100%;
+  border: none;
+  padding: 0.8rem;
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+  }
+
+  .hero-left,
+  .hero-right {
+    max-width: 100%;
+  }
+
+  .hero-right .form-row {
+    flex-direction: column;
+  }
+}
+/* End Section */
