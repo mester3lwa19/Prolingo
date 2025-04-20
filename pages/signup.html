@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prolingo - Sign Up</title>
     <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;500&family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
-
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;500&family=Poppins:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/components/footer.css">
+    <link rel="stylesheet" href="/styles/components/navbar.css">
     <link rel="stylesheet" href="/styles/pages/signup.css">
 </head>
 
@@ -57,14 +61,15 @@
                         <input type="email" id="email" class="form-input" placeholder="example@email.com" required>
                         <div class="error-message" id="emailError">Please enter a valid email address</div>
                     </div>
-
                     <div class="form-group">
                         <label for="password" class="form-label">Password</label>
                         <div class="password-input-container">
-                            <input type="password" id="password" class="password-input" placeholder="Enter your password" required>
-                            <button type="button" class="toggle-password" id="togglePassword">
-                                <img src="../assets/images/si_lock-line.svg" alt="Toggle password visibility">
-                            </button>
+                            <span class="password-icon lock-icon">
+                                <img src="/assets/images/si_lock-line.svg" alt="Password">
+                            </span>
+                            <input type="password" id="password" class="password-input"
+                                placeholder="Enter your password" required>
+
                         </div>
                         <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
                     </div>
@@ -72,15 +77,18 @@
                     <div class="form-group">
                         <label for="confirm-password" class="form-label">Confirm Password</label>
                         <div class="password-input-container">
-                            <input type="password" id="confirm-password" class="password-input" placeholder="Confirm your password" required>
-                            <button type="button" class="toggle-password" id="toggleConfirmPassword">
-                                <img src="../assets/images/si_lock-line.svg" alt="Toggle password visibility">
-                            </button>
+                            <span class="password-icon lock-icon">
+                                <img src="/assets/images/si_lock-line.svg" alt="Password">
+                            </span>
+                            <input type="password" id="confirm-password" class="password-input"
+                                placeholder="Confirm your password" required>
+
                         </div>
                         <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">Sign Up</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">Sign
+                        Up</button>
 
                     <div class="divider">
                         <div class="divider-line"></div>
@@ -173,7 +181,8 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="./js/main.js"></script>
     <script src="./scripts/pages/signup.js"></script>
 </body>
+
 </html>
