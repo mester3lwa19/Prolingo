@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prolingo - Sign Up</title>
+    <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;500&family=Poppins:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles/pages/signup.css">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <div class="container">
+        <header class="navbar">
+            <div class="logo-container nav-left">
+                <img class="logo-img" src="../assets/images/tabLogo.svg" alt="Prolingo Logo">
+                <span class="logo">Prolingo</span>
+            </div>
+
+            <nav>
+                <div class="nav-links">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">About</a>
+                    <a href="#" class="nav-link">Contact</a>
+                </div>
+
+                <div class="nav-buttons">
+                    <a href="#" class="btn btn-secondary btn-outline">Login</a>
+                    <a href="#" class="btn btn-primary">Get started</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="signup-container">
+                <div class="signup-header">
+                    <img class="signup-avatar" src="../assets/images/welcome.png" alt="Welcome Avatar">
+                    <h1>Welcome back!</h1>
+                </div>
+
+                <div class="success-message" id="successMessage">
+                    Account created successfully! Redirecting to dashboard...
+                </div>
+
+                <form class="signup-form" id="signupForm">
+                    <div class="form-group">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" id="username" class="form-input" placeholder="Enter your username" required>
+                        <div class="error-message" id="usernameError">Username must be at least 4 characters</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="example@email.com" required>
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="password-input-container">
+                            <input type="password" id="password" class="password-input" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <img src="../assets/images/si_lock-line.svg" alt="Toggle password visibility">
+                            </button>
+                        </div>
+                        <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password" class="form-label">Confirm Password</label>
+                        <div class="password-input-container">
+                            <input type="password" id="confirm-password" class="password-input" placeholder="Confirm your password" required>
+                            <button type="button" class="toggle-password" id="toggleConfirmPassword">
+                                <img src="../assets/images/si_lock-line.svg" alt="Toggle password visibility">
+                            </button>
+                        </div>
+                        <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">Sign Up</button>
+
+                    <div class="divider">
+                        <div class="divider-line"></div>
+                        <span class="divider-text">Or</span>
+                        <div class="divider-line"></div>
+                    </div>
+
+                    <button type="button" class="social-signup-btn" id="googleSignUp">
+                        <img src="../assets/images/logo-google.svg" alt="google icon">
+                        Sign Up with Google
+                    </button>
+
+                    <button type="button" class="social-signup-btn" id="facebookSignUp">
+                        <img src="../assets/images/Facebook.svg" alt="facebook icon">
+                        Sign Up with Facebook
+                    </button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <section class="footer-section">
+                <div class="footer-logo">
+                    <img class="footer-logo-img" src="../assets/images/logo 1.png" alt="Prolingo Logo">
+                    <span class="logo">Prolingo</span>
+                </div>
+
+                <p class="footer-description">
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma
+                </p>
+
+                <div class="social-icons">
+                    <a href="#" class="social-icon">
+                        <img src="../assets/images/Twitter.svg" alt="twitter icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="../assets/images/Facebook.svg" alt="facebook icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="../assets/images/Instagram.svg" alt="instagram icon">
+                    </a>
+                    <a href="#" class="social-icon">
+                        <img src="../assets/images/LinkedIn.svg" alt="linkedin icon">
+                    </a>
+                </div>
+            </section>
+
+            <section class="footer-section">
+                <h2>Product</h2>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Features</a>
+                    <a href="#" class="footer-link">Pricing</a>
+                    <a href="#" class="footer-link">Case studies</a>
+                    <a href="#" class="footer-link">Reviews</a>
+                    <a href="#" class="footer-link">Updates</a>
+                </div>
+            </section>
+
+            <section class="footer-section">
+                <h2>Support</h2>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Getting started</a>
+                    <a href="#" class="footer-link">Help center</a>
+                    <a href="#" class="footer-link">Server status</a>
+                    <a href="#" class="footer-link">Report a bug</a>
+                    <a href="#" class="footer-link">Chat support</a>
+                </div>
+            </section>
+
+            <section class="footer-section">
+                <h2>Downloads</h2>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">iOS</a>
+                    <a href="#" class="footer-link">Android</a>
+                    <a href="#" class="footer-link">Mac</a>
+                    <a href="#" class="footer-link">Windows</a>
+                    <a href="#" class="footer-link">Chrome</a>
+                </div>
+            </section>
+        </div>
+
+        <div class="copyright">
+            <p>
+                Copyright © 2025 Prolingo | All Rights Reserved |
+                <a href="#" class="legal-link">Terms and Conditions</a> |
+                <a href="#" class="legal-link">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="./scripts/pages/signup.js"></script>
+</body>
+</html>
