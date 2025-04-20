@@ -37,6 +37,7 @@ body {
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 }
+/* Start Global Styles */
 .btn-primary {
   display: flex;
   justify-content: center;
@@ -70,7 +71,16 @@ body {
   border: 1px solid var(--secondary-color);
   color: var(--secondary-color) !important;
 }
+h2 {
+  font-size: var(--font-39);
+  font-weight: var(--font-weight-bold);
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: var(--font-weight-bold);
+}
 
+/* End Global Styles */
 /* Start Section */
 
 .hero {
@@ -159,6 +169,7 @@ body {
   padding: 0.8rem;
   font-weight: var(--font-weight-bold);
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -178,3 +189,106 @@ body {
   }
 }
 /* End Section */
+/* Start logo slider */
+.logo_slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* .logos {
+  overflow: hidden;
+  padding: 60px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  background-color: red;
+  display: inline-block;
+  animation: 5s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 50px;
+  margin: 0 40px;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+} */
+.wrapper {
+  width: 90%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  height: 100px;
+  margin-top: 5rem;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
+}
+.wrapper .logo_slider_item {
+  transition: all 0.5s ease-in-out;
+  width: 200px;
+  height: 100px;
+  border-radius: 6px;
+  position: absolute;
+  left: max(calc(200px * 6), 100%);
+  animation-name: scrollLeft;
+  animation-duration: 35s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.wrapper .logo_slider_item:nth-child(1) {
+  animation-delay: calc(35s / 6 * (6 - 1) * -1);
+}
+.wrapper .logo_slider_item:nth-child(2) {
+  animation-delay: calc(35s / 6 * (6 - 2) * -1);
+}
+.wrapper .logo_slider_item:nth-child(3) {
+  animation-delay: calc(35s / 6 * (6 - 3) * -1);
+}
+.wrapper .logo_slider_item:nth-child(4) {
+  animation-delay: calc(35s / 6 * (6 - 4) * -1);
+}
+.wrapper .logo_slider_item:nth-child(5) {
+  animation-delay: calc(35s / 6 * (6 - 5) * -1);
+}
+.wrapper .logo_slider_item:nth-child(6) {
+  animation-delay: calc(35s / 6 * (6 - 6) * -1);
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -200px;
+  }
+}
+/* End logo slider */
