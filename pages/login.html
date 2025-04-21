@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      rel="shortcut icon"
+      href="../assets/images/tabLogo.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="../styles/components/navbar.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/pages/login.css" />
+    <script src="../scripts/main.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-left">
+        <img src="../assets/images/Logo.png" alt="Logo" class="logo" />
+      </div>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#" class="btn-outline">Login</a>
+        <a href="#" class="btn-primary">Get started</a>
+      </nav>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="close-btn" id="closeSidebar">&times;</div>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#">Login</a>
+      <a href="#">Get started</a>
+    </aside>
+
+    <section class="hero">
+      <div class="container">
+        <div class="logo_welcome">
+          <img src="../assets/images/tabLogo.svg" alt="prolingo_logo" />
+          <h2>Welcome back!</h2>
+        </div>
+        <form action="#" class="form">
+          <div class="input1">
+            <label for="Email_or_username">Email or username</label>
+            <input
+              type="text"
+              id="Email_or_username"
+              placeholder="mariamislam@email.com"
+            />
+          </div>
+          <div class="input2">
+            <label for="Password">Password</label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="Password"
+                placeholder="******************** "
+              />
+            </div>
+          </div>
+          <button type="submit" class="btn-primary">Login</button>
+          <a href="#">Forget password?</a>
+
+          <div class="social-options">
+            <div class="divider">
+              <div class="line"></div>
+              <span class="between_lines">Or</span>
+              <div class="line"></div>
+            </div>
+            <div class="socail-buttons">
+              <button type="button" class="social-login-btn" id="googleLogIn">
+                <img
+                  src="../assets/images/logo-google.svg"
+                  class="googleIcon"
+                  alt="googleLogIn"
+                />
+                <span>Login with Google</span>
+              </button>
+              <button type="button" class="social-login-btn" id="facebookLogIn">
+                <img
+                  src="../assets/images/Group.svg"
+                  class="facebookIcon"
+                  alt="facebookLogIn"
+                />
+                <span>Login with Facebook</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
