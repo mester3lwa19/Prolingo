@@ -12,31 +12,38 @@
     <link rel="stylesheet" href="/styles/components/footer.css">
     <link rel="stylesheet" href="/styles/components/navbar.css">
     <link rel="stylesheet" href="/styles/pages/signup.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="../scripts/main.js" defer></script>
+    <script src="../scripts/pages/signup.js"></script>
 </head>
 
 <body>
-    <div class="background-gradient"></div>
+    <!-- Start Header -->
+    <header class="navbar">
+        <div class="nav-left">
+            <img src="../assets/images/Logo.png" alt="Logo" class="logo">
+        </div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#" class="btn-outline">Login</a>
+            <a href="#" class="btn-primary">Get started</a>
+        </nav>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </header>
 
+    <aside class="sidebar" id="sidebar">
+        <div class="close-btn" id="closeSidebar">&times;</div>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+        <a href="#">Get started</a>
+    </aside>
+    <!-- End Header -->
     <div class="container">
-        <header class="navbar">
-            <div class="logo-container nav-left">
-                <img class="logo-img" src="../assets/images/tabLogo.svg" alt="Prolingo Logo">
-                <span class="logo">Prolingo</span>
-            </div>
 
-            <nav>
-                <div class="nav-links">
-                    <a href="#" class="nav-link">Home</a>
-                    <a href="#" class="nav-link">About</a>
-                    <a href="#" class="nav-link">Contact</a>
-                </div>
-
-                <div class="nav-buttons">
-                    <a href="#" class="btn btn-secondary btn-outline">Login</a>
-                    <a href="#" class="btn btn-primary">Get started</a>
-                </div>
-            </nav>
-        </header>
 
         <main>
             <section class="signup-container">
@@ -87,7 +94,7 @@
                         <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">Sign
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-bottom: 16px;">Sign
                         Up</button>
 
                     <div class="divider">
@@ -137,39 +144,41 @@
                     </a>
                 </div>
             </section>
+            <div class="footer-pages">
 
-            <section class="footer-section">
-                <h2>Product</h2>
-                <div class="footer-links">
-                    <a href="#" class="footer-link">Features</a>
-                    <a href="#" class="footer-link">Pricing</a>
-                    <a href="#" class="footer-link">Case studies</a>
-                    <a href="#" class="footer-link">Reviews</a>
-                    <a href="#" class="footer-link">Updates</a>
-                </div>
-            </section>
+                <section class="footer-section">
+                    <h3>Product</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Features</a>
+                        <a href="#" class="footer-link">Pricing</a>
+                        <a href="#" class="footer-link">Case studies</a>
+                        <a href="#" class="footer-link">Reviews</a>
+                        <a href="#" class="footer-link">Updates</a>
+                    </div>
+                </section>
 
-            <section class="footer-section">
-                <h2>Support</h2>
-                <div class="footer-links">
-                    <a href="#" class="footer-link">Getting started</a>
-                    <a href="#" class="footer-link">Help center</a>
-                    <a href="#" class="footer-link">Server status</a>
-                    <a href="#" class="footer-link">Report a bug</a>
-                    <a href="#" class="footer-link">Chat support</a>
-                </div>
-            </section>
+                <section class="footer-section">
+                    <h3>Support</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Getting started</a>
+                        <a href="#" class="footer-link">Help center</a>
+                        <a href="#" class="footer-link">Server status</a>
+                        <a href="#" class="footer-link">Report a bug</a>
+                        <a href="#" class="footer-link">Chat support</a>
+                    </div>
+                </section>
 
-            <section class="footer-section">
-                <h2>Downloads</h2>
-                <div class="footer-links">
-                    <a href="#" class="footer-link">iOS</a>
-                    <a href="#" class="footer-link">Android</a>
-                    <a href="#" class="footer-link">Mac</a>
-                    <a href="#" class="footer-link">Windows</a>
-                    <a href="#" class="footer-link">Chrome</a>
-                </div>
-            </section>
+                <section class="footer-section">
+                    <h3>Downloads</h3>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">iOS</a>
+                        <a href="#" class="footer-link">Android</a>
+                        <a href="#" class="footer-link">Mac</a>
+                        <a href="#" class="footer-link">Windows</a>
+                        <a href="#" class="footer-link">Chrome</a>
+                    </div>
+                </section>
+            </div>
         </div>
 
         <div class="copyright">
@@ -181,8 +190,7 @@
         </div>
     </footer>
 
-    <script src="./js/main.js"></script>
-    <script src="./scripts/pages/signup.js"></script>
+
 </body>
 
 </html>
