@@ -353,3 +353,222 @@ body {
   font-weight: var(--font-weight-medium);
 }
 /* End languages */
+
+/* Start FAQ */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.description {
+  color: #d1d5db;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.faq-item {
+  border-radius: 8px;
+  border: 2px solid rgba(250, 255, 255, 0.5);
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  transition: all 0.3 ease-in-out;
+}
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.question-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+.question-text {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.icon {
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+.answer {
+  margin-top: 24px;
+  color: #d1d5db;
+  max-height: 0;
+  overflow: hidden;
+  /* opacity: 0; */
+  transition: all 0.3 ease-in-out;
+
+  display: none;
+}
+.answer.show {
+  transition: all 0.3 ease-in-out;
+  max-height: 500px;
+  /* opacity: 1; */
+  display: block;
+}
+
+/* Responsive adjustments (simplified) */
+@media (max-width: 768px) {
+  /* md breakpoint, converted to pixels */
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .heading {
+    font-size: var(--font-39);
+  }
+}
+/* End FAQ */
+/* Start Testimonials */
+
+.section-testimonials {
+  margin-top: 60px;
+}
+.section-testimonials .description {
+  color: #d1d5db;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-testimonials .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.section-testimonials .card {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  border: 2px solid rgba(250, 255, 255, 0.5);
+}
+.section-testimonials .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 177, 188, 0.1) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.section-testimonials .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 253, 255, 0.1);
+  border-color: var(--primary-color);
+}
+.section-testimonials .card:hover::before {
+  opacity: 1;
+}
+.section-testimonials .card-content {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+.section-testimonials .user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section-testimonials .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4b5563;
+  margin-right: 1rem;
+}
+.section-testimonials .avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.section-testimonials .user-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.section-testimonials .user-title {
+  font-size: 0.875rem;
+  color: #d1d5db;
+}
+
+@media (max-width: 768px) {
+  .section-testimonials .description {
+    font-size: 0.875rem;
+  }
+  .section-testimonials .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* End Testimonials */
+
+/* Start Contact us */
+.contact-us {
+  margin: 60px 0px;
+}
+.contact-us .container{
+  width: 536px;
+}
+.contact-us .form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-us .form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.contact-us  .form-group input {
+  display: flex;
+  height: 56px;
+  padding: 10px 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-radius: 8px;
+}
+.contact-us .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  color: var(--main-bg-color);
+  font-size: 1rem;
+  height: 200px;
+}
+
+.contact-us .form-group label {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.contact-us .btn-primary{
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .contact-us .form-row {
+    flex-direction: column;
+  }
+  .contact-us .container{
+    width: 100%;
+  }
+}
+/* End Contact us */

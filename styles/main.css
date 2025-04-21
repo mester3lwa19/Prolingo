@@ -49,6 +49,9 @@ body {
   font-size: var(--font-16);
   font-weight: var(--font-weight-medium);
   letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
 }
 .btn-primary:hover {
   background-color: var(--secondary-color);
@@ -66,6 +69,9 @@ body {
   font-size: var(--font-16);
   font-weight: var(--font-weight-medium);
   letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
 }
 .btn-outline:hover {
   border: 1px solid var(--secondary-color);
@@ -81,4 +87,3 @@ h2 {
 }
 
 /* End Global Styles */
-
