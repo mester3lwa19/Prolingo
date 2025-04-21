@@ -4,14 +4,26 @@ header.navbar {
   align-items: center;
   padding: 1rem 2rem;
 }
-.navbar .nav-left {
+.logo-container {
   display: flex;
   align-items: center;
-  width: 150px;
+  gap: 4px;
 }
-.navbar .nav-left img {
-  width: 100%;
-  height: auto;
+
+.logo-img {
+  width: 60px;
+  border-radius: 512px;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: rotate(15deg);
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 18px;
 }
 .nav-links {
   display: flex;
@@ -33,7 +45,7 @@ header.navbar {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -46,7 +58,6 @@ header.navbar {
 .nav-link:hover::after {
   width: 100%;
 }
-
 
 .hamburger {
   display: none;
