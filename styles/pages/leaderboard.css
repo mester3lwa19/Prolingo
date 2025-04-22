@@ -23,10 +23,13 @@
 
 .leaderboard-section {
   display: flex;
-  width: 850px;
   flex-direction: column;
   align-items: flex-start;
   gap: 27px;
+  width: 100%;
+  max-width: 850px;
+  padding: 0 16px; /* gives spacing on mobile sides */
+  box-sizing: border-box;
 }
 
 .title {
@@ -44,20 +47,20 @@
   align-items: flex-start;
   gap: 14px;
   align-self: stretch;
-
 }
 
 .one-to-ten {
   display: flex;
-  padding: 8px;
   justify-content: space-between;
   align-items: center;
-  align-self: stretch;
+  padding: 8px;
+  width: 100%;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.10);
-  background: #FFF;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.04), 0px 4px 8px 0px rgba(0, 0, 0, 0.06);
-
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.04),
+    0px 4px 8px 0px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
 }
 
 .num-name {
@@ -91,20 +94,22 @@
   align-items: center;
   gap: 6px;
 }
-.img-container{
+.img-container {
   position: relative;
   width: 25px;
   height: 25px;
 }
-.img-container img{
+.img-container img {
   width: 100%;
   height: 100%;
 }
-.img-container .first-3-nums ,.img-container .remaining-nums , .img-container .avatar-sign-num{
+.img-container .first-3-nums,
+.img-container .remaining-nums,
+.img-container .avatar-sign-num {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
   margin: 0;
 }
 .img1,
@@ -114,41 +119,41 @@
   height: 25px;
   flex-shrink: 0;
 }
-.first-3-nums , .remaining-nums {
+.first-3-nums,
+.remaining-nums {
   display: flex;
-width: 17px;
-height: 16px;
-flex-direction: column;
-justify-content: center;
-flex-shrink: 0;
-color: rgba(0, 0, 0, 0.40);
-text-align: center;
-font-family: ABeeZee;
-font-size: 10px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+  width: 17px;
+  height: 16px;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-family: ABeeZee;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
-.remaining-nums{
+.remaining-nums {
   width: 21px;
   height: 21px;
-  
 }
-.avatar{
+.avatar {
   display: flex;
-justify-content: center;
-align-items: flex-start;
-gap: -12px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: -12px;
 }
-.name{
+.name {
   color: #000;
-font-family: Poppins;
-font-size: 13px;
-font-style: normal;
-font-weight: 500;
-line-height: 100%; 
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
 }
-.avatar-profile-pic{
+.avatar-profile-pic {
   display: flex;
   width: 35px;
   height: 35px;
@@ -158,33 +163,32 @@ line-height: 100%;
   gap: 5.263px;
   aspect-ratio: 1/1;
   border-radius: 526.316px;
-border: 0.526px solid #5F5C8E;
-background: #FFF;
+  border: 0.526px solid #5f5c8e;
+  background: #fff;
 }
-.avatar-sign{
+.avatar-sign {
   width: 20px;
   height: 20px;
   margin-bottom: 40px;
-  
 }
-.avatar-img{
+.avatar-img {
   width: 30px;
-height: 30px;
-flex-shrink: 0;
+  height: 30px;
+  flex-shrink: 0;
 }
-.avatar-sign-num{
-  color: #FFF;
-text-align: center;
-font-family: ABeeZee;
-font-size: 10px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+.avatar-sign-num {
+  color: #fff;
+  text-align: center;
+  font-family: ABeeZee;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.sign{
+.sign {
   width: 16.667px;
-height: 16.667px;
-flex-shrink: 0;
+  height: 16.667px;
+  flex-shrink: 0;
 }
 .avatar-badge-wrapper {
   position: relative;
@@ -195,18 +199,37 @@ flex-shrink: 0;
   position: absolute;
   top: -5px;
   right: -5px;
-  background-color: #4C8EF7;
+  background-color: #4c8ef7;
   color: white;
-  font-size: 9px;        /* Smaller font */
-  padding: 1px 4px;      /* Less padding */
+  font-size: 9px; /* Smaller font */
+  padding: 1px 4px; /* Less padding */
   border-radius: 999px;
   font-weight: bold;
-  min-width: 16px;       /* Smaller width */
-  height: 16px;          /* Smaller height */
+  min-width: 16px; /* Smaller width */
+  height: 16px; /* Smaller height */
   display: flex;
   align-items: center;
   justify-content: center;
   line-height: 1;
 }
+@media (max-width: 768px) {
+  .num-name {
+    gap: 16px;
+  }
 
+  .right-num {
+    font-size: 14px;
+    width: auto;
+  }
 
+  .name {
+    font-size: 12px;
+  }
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
