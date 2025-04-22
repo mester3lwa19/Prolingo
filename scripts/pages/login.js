@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-<<<<<<< HEAD
     // Form elements
     const loginForm = document.getElementById("loginForm");
     const emailUsernameInput = document.getElementById("email-username");
@@ -83,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
   
-=======
+
   // Form elements
   const form = document.getElementById("loginForm");
   const emailInput = document.getElementById("email");
@@ -151,5 +150,5 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Facebook Login functionality to be implemented");
     });
   }
-});
->>>>>>> ec1988b207b3307529fd14edd96ed07415e54798
+
+

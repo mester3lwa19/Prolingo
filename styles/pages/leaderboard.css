@@ -168,8 +168,8 @@ background: #FFF;
   
 }
 .avatar-img{
-  width: 23px;
-height: 23px;
+  width: 30px;
+height: 30px;
 flex-shrink: 0;
 }
 .avatar-sign-num{
@@ -186,3 +186,27 @@ line-height: normal;
 height: 16.667px;
 flex-shrink: 0;
 }
+.avatar-badge-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #4C8EF7;
+  color: white;
+  font-size: 9px;        /* Smaller font */
+  padding: 1px 4px;      /* Less padding */
+  border-radius: 999px;
+  font-weight: bold;
+  min-width: 16px;       /* Smaller width */
+  height: 16px;          /* Smaller height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+
