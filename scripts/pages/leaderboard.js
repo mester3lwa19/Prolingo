@@ -35,14 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="num-name">
         <div class="left-num">
           <div class="img-container">
-            <img src="../assets/images/${getRankIcon(index)}.svg" class="img" alt="rank-icon">
+            <img src="/assets/images/${getRankIcon(index)}.svg" class="img" alt="rank-icon">
             <p class="${index < 3 ? 'first-3-nums' : 'remaining-nums'}">${user.rank}</p>
           </div>
         </div>
         <div class="avatar-name">
           <div class="avatar">
             <div class="avatar-badge-wrapper">
-              <img src="../assets/images/User.svg" class="avatar-img" alt="avatar">
+              <img src="/assets/images/User.svg" class="avatar-img" alt="avatar">
               <span class="badge">${user.sign}</span>
             </div>
           </div>
