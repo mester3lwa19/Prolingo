@@ -1,0 +1,302 @@
+:root {
+  --primary-color: #00b1bc;
+  --background-color: #254446;
+  --text-color: #faffff;
+  --secondary-text: #adabc3;
+  --border-color: rgba(250, 255, 255, 0.55);
+  --error-color: #ff6b6b;
+  --success-color: #6bcb77;
+  --card-hover-color: rgba(0, 253, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", "DM Sans", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background Gradient */
+.background-gradient {
+  position: fixed;
+  width: 2493px;
+  height: 2493px;
+  right: -2005px;
+  bottom: -2091px;
+  background: radial-gradient(
+    ellipse 46.26% 46.26% at 96.37% 50.11%,
+    rgba(56, 195, 204, 0.3) 0%,
+    rgba(28, 97.5, 102, 0.3) 100%
+  );
+  box-shadow: 15px 15px 15px;
+  border-radius: 9999px;
+  filter: blur(7.5px);
+  z-index: -1;
+  transform: rotate(180deg);
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  flex: 1;
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.content-wrapper {
+  padding: 37px 40px;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Levels section */
+.levels-section {
+  animation: fadeIn 1s ease-out;
+}
+
+.section-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 39px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+/* Levels grid styles */
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.level-card {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: rgba(37, 68, 70, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.level-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 177, 188, 0.1) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.level-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 253, 255, 0.1);
+  border-color: var(--primary-color);
+}
+
+.level-card:hover::before {
+  opacity: 1;
+}
+
+.level-header {
+  align-items: center;
+  gap: 24px;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+
+.level-number {
+  font-size: 39px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.level-icon {
+  width: 89px;
+  transition: transform 0.3s ease;
+}
+
+.level-card:hover .level-icon {
+  transform: scale(1.1);
+}
+
+.level-category {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.level-title {
+  border-top: 1px dashed var(--border-color);
+  padding: 16px 0;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.level-progress {
+  height: 6px;
+  background-color: rgba(250, 255, 255, 0.2);
+  border-radius: 3px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.level-progress-bar {
+  height: 100%;
+  background-color: var(--primary-color);
+  width: 0;
+  transition: width 1s ease;
+}
+
+/* Filter controls */
+.filter-controls {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: var(--primary-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+  }
+
+  .levels-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .levels-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .level-card {
+    padding: 16px;
+  }
+
+  .level-header {
+    /* gap: 16px; */
+  }
+
+  .level-icon {
+    width: 60px;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .footer-content {
+    padding: 0;
+  }
+}
