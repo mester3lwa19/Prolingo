@@ -1,0 +1,83 @@
+header.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.navbar .nav-left {
+  display: flex;
+  align-items: center;
+  width: 150px;
+}
+.navbar .nav-left img {
+  width: 100%;
+  height: auto;
+}
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+}
+.nav-links a:hover {
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+  transition: all 0.3s ease-in-out;
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  height: 100%;
+  width: 250px;
+  background: #061617;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  transition: right 0.3s ease-in-out;
+  z-index: 99999999999;
+}
+
+.sidebar a {
+  margin: 1rem 0;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar .close-btn {
+  align-self: flex-end;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar.open {
+    right: 0;
+  }
+  .sidebar.open .close-btn {
+    display: block;
+  }
+}

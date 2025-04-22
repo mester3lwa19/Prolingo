@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-family);
+  background: var(--main-bg-color);
+  color: var(--white);
+  font-size: var(--font-16);
+  line-height: 1.5;
+}
+
+:root {
+  /* Colors */
+  --main-bg-color: #254446;
+  --black: #061617;
+  --primary-color: #38c3cc;
+  --secondary-color: #ffaf1a;
+  --white: #f4feff;
+
+  /* Font */
+  --font-family: "Poppins", sans-serif;
+  --font-10: 10px;
+  --font-13: 13px;
+  --font-16: 16px;
+  --font-20: 20px;
+  --font-25: 25px;
+  --font-31: 31px;
+  --font-39: 39px;
+  --font-49: 49px;
+  --font-61: 61px;
+
+  /* Font Weight */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+/* Start Global Styles */
+.btn-primary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 14px;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: var(--white);
+  font-size: var(--font-16);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  color: var(--white) !important;
+}
+
+.btn-outline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 18px;
+  border-radius: 8px;
+  color: var(--white);
+  border: 1px solid var(--white);
+  font-size: var(--font-16);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+
+}
+.btn-outline:hover {
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color) !important;
+}
+h2 {
+  font-size: var(--font-39);
+  font-weight: var(--font-weight-bold);
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: var(--font-weight-bold);
+}
+
+/* End Global Styles */
+

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Poppins&display=swap" rel="stylesheet">
+  <title>Prolingo - Quiz</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../styles/components/navbar.css" />
+  <link rel="stylesheet" href="../styles/main.css" />
+  <style>
+  /* Start of Nav-bar */
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      gap: 1rem;
+    }
+
+    .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .logo-img {
+            width: 60px;
+            border-radius: 512px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: rotate(15deg);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 18px;
+        }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+      margin-left: auto;  /* This pushes the nav links to the right */
+    
+    }
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: all 0.3s ease-in-out;
+      font-weight: 500;
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+   
+    .user-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .edit-profile-link {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.9rem;
+      color: var(--secondary-text);
+      text-decoration: none;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      
+    }
+  /* End of Nav-bar */
+  
+
+</style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo-container">
+        <img src="../assets/images/tabLogo.svg" alt="Prolingo Logo" class="logo-img">
+        <div class="logo-text">Prolingo</div>
+    </div>
+
+
+    <nav class="nav-links">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">Lesson</a>
+    </nav>
+
+    <div class="user-profile">
+      <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar" />
+      <div class="user-info">
+        <div class="user-greeting">Hi, Ezz</div>
+        <a href="#" class="edit-profile-link">
+          <span>Edit Profile</span>
+          <img src="../assets/images/Chevron right.svg" alt="Edit" width="15" />
+        </a>
+      </div>
+    </div>
+
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </div>
