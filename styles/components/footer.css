@@ -59,6 +59,10 @@ footer {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  text-decoration: none;
+}
+.social-icon {
+  color: var(--text-color);
 }
 
 .social-icon:hover {
@@ -107,7 +111,6 @@ footer {
 .footer-link:hover::after {
   width: 80%;
   opacity: 1;
-
 }
 
 .copyright {
