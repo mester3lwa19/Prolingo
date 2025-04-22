@@ -9,6 +9,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;500&family=Poppins:wght@400;500;700;800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/styles/components/footer.css">
     <link rel="stylesheet" href="/styles/components/navbar.css">
     <link rel="stylesheet" href="/styles/pages/signup.css">
@@ -73,8 +76,8 @@
                         <label for="password" class="form-label">Password</label>
                         <div class="password-input-container">
                             <span class="password-icon lock-icon">
-                                <img src="/assets/images/si_lock-line.svg" alt="Password">
-                            </span>
+                                <i class="fa-solid fa-lock"></i>
+                              </span>
                             <input type="password" id="password" class="password-input"
                                 placeholder="Enter your password" required>
 
@@ -86,8 +89,8 @@
                         <label for="confirm-password" class="form-label">Confirm Password</label>
                         <div class="password-input-container">
                             <span class="password-icon lock-icon">
-                                <img src="/assets/images/si_lock-line.svg" alt="Password">
-                            </span>
+                                <i class="fa-solid fa-lock"></i>
+                              </span>
                             <input type="password" id="confirm-password" class="password-input"
                                 placeholder="Confirm your password" required>
 
@@ -105,12 +108,12 @@
                     </div>
 
                     <button type="button" class="social-signup-btn" id="googleSignUp">
-                        <img src="../assets/images/logo-google.svg" alt="google icon">
+                        <i class="fa-brands fa-google"></i>
                         Sign Up with Google
                     </button>
 
                     <button type="button" class="social-signup-btn" id="facebookSignUp">
-                        <img src="../assets/images/Facebook.svg" alt="facebook icon">
+                        <i class="fa-brands fa-facebook-f"></i>
                         Sign Up with Facebook
                     </button>
                 </form>
