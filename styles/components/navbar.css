@@ -19,15 +19,35 @@ header.navbar {
   align-items: center;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
+.nav-link {
   font-size: 18px;
-  transition: all 0.3s ease-in-out;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  line-height: 18px;
 }
-.nav-links a:hover {
-  color: #ffaf1a;
+
+.nav-link:hover {
+  color: var(--primary-color);
 }
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -7px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -46,6 +66,7 @@ header.navbar {
   flex-direction: column;
   padding: 2rem 1rem;
   transition: right 0.3s ease-in-out;
+  z-index: 99999999999;
 }
 
 .sidebar a {
