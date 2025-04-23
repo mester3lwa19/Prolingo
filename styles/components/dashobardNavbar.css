@@ -41,15 +41,18 @@ header {
 .nav-link:hover::after {
   width: 100%;
 }
+
 .navbar .nav-left {
   display: flex;
   align-items: center;
   width: 150px;
 }
+
 .navbar .nav-left img {
   width: 100%;
   height: auto;
 }
+
 .sidebar {
   width: 269px;
   border-right: 1px solid var(--border-color);
@@ -128,6 +131,7 @@ header {
 .nav-icon {
   width: 32px;
 }
+
 .user-profile {
   display: flex;
   align-items: center;
@@ -169,12 +173,14 @@ header {
 .edit-profile-link:hover {
   color: #fff;
 }
+
 .hamburger {
   display: none;
   font-size: 2rem;
   color: white;
   cursor: pointer;
 }
+
 @media (max-width: 768px) {
   .sidebar {
     position: fixed;
@@ -188,9 +194,11 @@ header {
   .sidebar.active {
     transform: translateX(0);
   }
+
   .nav-links {
     display: none;
   }
+
   .hamburger {
     display: block;
   }
@@ -211,15 +219,18 @@ header {
   .user-profile {
     display: none;
   }
+
   .sidebar .user-profile {
     display: flex;
   }
 }
+
 @media (min-width: 769px) {
   .navbar .nav-left {
     display: none;
   }
+
   .sidebar .user-profile {
-    display:none;
+    display: none;
   }
 }

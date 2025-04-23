@@ -130,8 +130,10 @@ body {
   line-height: 16px;
   outline: none;
 }
-.password-input::placeholder,.form-input::placeholder {
-    color: #c6c6c6;
+
+.password-input::placeholder,
+.form-input::placeholder {
+  color: #c6c6c6;
 }
 
 .divider {

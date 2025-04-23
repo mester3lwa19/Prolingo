@@ -32,11 +32,9 @@ body {
   height: 2493px;
   right: -2005px;
   bottom: -2091px;
-  background: radial-gradient(
-    ellipse 46.26% 46.26% at 96.37% 50.11%,
-    rgba(56, 195, 204, 0.3) 0%,
-    rgba(28, 97.5, 102, 0.3) 100%
-  );
+  background: radial-gradient(ellipse 46.26% 46.26% at 96.37% 50.11%,
+      rgba(56, 195, 204, 0.3) 0%,
+      rgba(28, 97.5, 102, 0.3) 100%);
   box-shadow: 15px 15px 15px;
   border-radius: 9999px;
   filter: blur(7.5px);
@@ -118,11 +116,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 177, 188, 0.1) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 177, 188, 0.1) 0%,
+      transparent 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }

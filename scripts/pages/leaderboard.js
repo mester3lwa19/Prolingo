@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: "Fayrouz Tarek", score: 5000, sign: 8 },
     { name: "Karim Wael", score: 4500, sign: 5 },
     { name: "Ali Khaled", score: 5075, sign: 6 },
-    
+
   ];
 
   // Sort by score descending

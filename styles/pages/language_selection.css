@@ -16,11 +16,13 @@
     animation: fadeIn 1s ease-out;
 }
 
-.skill-level, .language-choices {
+.skill-level,
+.language-choices {
     margin-bottom: 60px;
 }
 
-.skill-level h2, .language-choices h2 {
+.skill-level h2,
+.language-choices h2 {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 2rem;
@@ -70,7 +72,7 @@
     transition: color 0.3s ease;
 }
 
-.radio-option input[type="radio"]:checked + label {
+.radio-option input[type="radio"]:checked+label {
     color: var(--primary-color);
     font-weight: 500;
 }
@@ -164,6 +166,7 @@
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -181,8 +184,9 @@
     .language-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
-    .skill-level h2, .language-choices h2 {
+
+    .skill-level h2,
+    .language-choices h2 {
         font-size: 2rem;
     }
 }
@@ -191,45 +195,75 @@
     .language-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .radio-option {
         padding: 0.8rem;
     }
-    
+
     .radio-option label {
         font-size: 1rem;
     }
-    
+
     .language-card {
         min-height: 200px;
         padding: 1.5rem 1rem;
     }
-    
+
     .language-card img {
         width: 80px;
         height: 80px;
     }
 }
+
 /* Animation keyframes */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes slideIn {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes slideOut {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(-20px); opacity: 0; }
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
 }
 
 /* Error and success messages */
@@ -279,7 +313,7 @@
 
 .language-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     border-color: var(--accent-color, #00fdff);
 }
 
@@ -378,7 +412,7 @@
     object-fit: cover;
     border: 2px solid var(--primary-color, #00b1bc);
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
     margin-right: 0;
 }
 

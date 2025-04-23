@@ -1,8 +1,9 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
 body {
   font-family: var(--font-family);
   background: var(--main-bg-color);
@@ -59,6 +60,7 @@ body {
   margin: 0 auto;
   width: 100%;
 }
+
 .heading {
   display: flex;
   align-items: center;
@@ -94,6 +96,7 @@ body {
     padding: 0 1rem;
   }
 }
+
 .coding-area {
   display: flex;
   flex-direction: row;
@@ -344,6 +347,7 @@ body {
   width: 16px;
   height: 16px;
 }
+
 /* *,
 *::before,
 *::after {
@@ -389,6 +393,7 @@ body {
 
 /* Mobile */
 @media (max-width: 480px) {
+
   .input,
   .output {
     width: 100%;

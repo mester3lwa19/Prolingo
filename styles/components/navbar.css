@@ -4,6 +4,7 @@ header.navbar {
   align-items: center;
   padding: 1rem 2rem;
 }
+
 .logo-container {
   display: flex;
   align-items: center;
@@ -25,6 +26,7 @@ header.navbar {
   font-weight: 800;
   line-height: 18px;
 }
+
 .nav-links {
   display: flex;
   gap: 1.2rem;
@@ -91,6 +93,7 @@ header.navbar {
   font-size: 1.5rem;
   cursor: pointer;
 }
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -103,6 +106,7 @@ header.navbar {
   .sidebar.open {
     right: 0;
   }
+
   .sidebar.open .close-btn {
     display: block;
   }

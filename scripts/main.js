@@ -14,7 +14,7 @@ if (hamburger && sidebar && closeSidebar) {
 }
 
 // Add animation class to header
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const header = document.querySelector('header');
     if (header) {
         header.classList.add('animate__animated', 'animate__fadeInDown');

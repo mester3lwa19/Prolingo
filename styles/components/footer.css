@@ -9,10 +9,12 @@ footer {
   grid-template-columns: repeat(2, 1fr);
   padding: 24px;
 }
+
 .footer-pages {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 .footer-section h3 {
   font-size: var(--font-20);
   text-align: left;
@@ -61,6 +63,7 @@ footer {
   transition: all 0.3s ease;
   text-decoration: none;
 }
+
 .social-icon {
   color: var(--text-color);
 }
@@ -143,23 +146,27 @@ footer {
     padding: 24px;
     gap: 40px;
   }
+
   .footer-content .footer-social {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
+
   .footer-pages {
     grid-template-columns: repeat(2, 1fr);
     padding: 24px;
     gap: 20px;
   }
+
   .footer-description {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .footer-logo {
     justify-content: center;
   }
