@@ -4,14 +4,26 @@ header.navbar {
   align-items: center;
   padding: 1rem 2rem;
 }
-.navbar .nav-left {
+.logo-container {
   display: flex;
   align-items: center;
-  width: 150px;
+  gap: 4px;
 }
-.navbar .nav-left img {
-  width: 100%;
-  height: auto;
+
+.logo-img {
+  width: 60px;
+  border-radius: 512px;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: rotate(15deg);
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 18px;
 }
 .nav-links {
   display: flex;
@@ -19,19 +31,33 @@ header.navbar {
   align-items: center;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
+.nav-link {
   font-size: 18px;
-  transition: all 0.3s ease-in-out;
-  font-weight: 500;
-}
-.nav-links a:hover {
-  color: var(--secondary-color);
-  transform: translateY(-2px);
-  transition: all 0.3s ease-in-out;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  line-height: 18px;
 }
 
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -7px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
 
 .hamburger {
   display: none;

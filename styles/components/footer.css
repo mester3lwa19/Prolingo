@@ -2,7 +2,6 @@
 footer {
   padding: 40px 0;
   border-top: 1px solid #d4d2e3;
-  margin-top: 80px;
 }
 
 .footer-content {
@@ -43,6 +42,7 @@ footer {
   line-height: 30px;
   font-size: 18px;
   opacity: 0.7;
+  width: 80%;
 }
 
 .social-icons {
@@ -59,6 +59,10 @@ footer {
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  text-decoration: none;
+}
+.social-icon {
+  color: var(--text-color);
 }
 
 .social-icon:hover {
@@ -74,23 +78,39 @@ footer {
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
 }
 
 .footer-link {
   color: var(--text-color);
   text-decoration: none;
+  font-family: "DM Sans", sans-serif;
   font-size: 18px;
   line-height: 18px;
   opacity: 0.7;
   transition: all 0.3s ease;
-  text-align: left;
+  position: relative;
 }
 
 .footer-link:hover {
-  color: var(--secondary-color);
-  transform: translateY(-2px);
-  transition: all 0.3s ease-in-out;
+  opacity: 1;
+  color: var(--primary-color);
+}
+
+.footer-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -7px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::after {
+  width: 80%;
+  opacity: 1;
 }
 
 .copyright {
@@ -123,6 +143,12 @@ footer {
     padding: 24px;
     gap: 40px;
   }
+  .footer-content .footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   .footer-pages {
     grid-template-columns: repeat(2, 1fr);
     padding: 24px;
@@ -130,6 +156,9 @@ footer {
   }
   .footer-description {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .footer-logo {
     justify-content: center;
@@ -139,5 +168,3 @@ footer {
     justify-content: center;
   }
 }
-
-/
