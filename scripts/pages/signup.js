@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       form.style.display = "none";
       successMessage.style.display = "block";
       setTimeout(() => {
-        window.location.href = "../pages/dashboard.html";
+        window.location.href = "/dashboard.html";
       }, 2000);
     }
   });
