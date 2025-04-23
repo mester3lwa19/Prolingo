@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     searchContainer.className = "search-container";
     searchContainer.innerHTML = `
         <input type="text" id="languageSearch" placeholder="Search languages..." 
-               aria-label="Search programming languages">
+        aria-label="Search programming languages">
         <div class="search-icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="11" cy="11" r="8"></circle>
