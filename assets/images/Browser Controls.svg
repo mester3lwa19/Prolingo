@@ -1,0 +1,12 @@
+<svg width="52" height="13" viewBox="0 0 52 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Browser Controls" clip-path="url(#clip0_253_414)">
+<circle id="Option - Expand" cx="46" cy="6.5" r="5.75" fill="#27CA40" stroke="#3EAF3F" stroke-width="0.5"/>
+<circle id="Option - Minimize" cx="26" cy="6.5" r="5.75" fill="#FFC130" stroke="#E1A325" stroke-width="0.5"/>
+<circle id="Option - Close" cx="6" cy="6.5" r="5.75" fill="#FF6058" stroke="#E14942" stroke-width="0.5"/>
+</g>
+<defs>
+<clipPath id="clip0_253_414">
+<rect width="52" height="12" fill="white" transform="translate(0 0.5)"/>
+</clipPath>
+</defs>
+</svg>
