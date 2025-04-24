@@ -7,7 +7,7 @@
             "False"
         ],
         "correct": 1,
-        "explanation": "False — some tags like <br> and <img> are self-closing."
+        "explanation": "False — some tags like &lt;br&gt; and &lt;img&gt; are self-closing."
     },
     {
         "type": "multiple",
@@ -25,17 +25,17 @@
         "type": "multiple",
         "question": "What is the correct HTML element for inserting a line break?",
         "options": [
-            "<lb>",
-            "<break>",
-            "<br>",
-            "<newline>"
+            "&lt;lb&gt;",
+            "&lt;break&gt;",
+            "&lt;br&gt;",
+            "&lt;newline&gt;"
         ],
         "correct": 2,
-        "explanation": "<br> is the correct HTML tag for a line break."
+        "explanation": "&lt;br&gt; is the correct HTML tag for a line break."
     },
     {
         "type": "fill",
-        "question": "The ______ attribute in the <img> tag specifies the image path.",
+        "question": "The ______ attribute in the &lt;img&gt; tag specifies the image path.",
         "options": [
             "href",
             "src",
@@ -59,59 +59,58 @@
         "type": "multiple",
         "question": "Which tag defines an unordered list?",
         "options": [
-            "<ol>",
-            "<ul>",
-            "<li>",
-            "<list>"
+            "&lt;ol&gt;",
+            "&lt;ul&gt;",
+            "&lt;li&gt;",
+            "&lt;list&gt;"
         ],
         "correct": 1,
-        "explanation": "<ul> is used to define an unordered list."
+        "explanation": "&lt;ul&gt; is used to define an unordered list."
     },
     {
         "type": "fill",
         "question": "The ______ tag is used for the main heading (largest size).",
         "options": [
-            "<h6>",
-            "<head>",
-            "<h1>",
-            "<header>"
+            "&lt;h6&gt;",
+            "&lt;head&gt;",
+            "&lt;h1&gt;",
+            "&lt;header&gt;"
         ],
-        "correct": "<h1>",
-        "explanation": "<h1> is the largest heading tag in HTML."
+        "correct": "&lt;h1&gt;",
+        "explanation": "&lt;h1&gt; is the largest heading tag in HTML."
     },
     {
         "type": "truefalse",
-        "question": "The <meta> tag belongs inside the <body> section.",
+        "question": "The &lt;meta&gt; tag belongs inside the &lt;body&gt; section.",
         "options": [
             "True",
             "False"
         ],
         "correct": 1,
-        "explanation": "False — the <meta> tag should be placed in the <head> section."
+        "explanation": "False — the &lt;meta&gt; tag should be placed in the &lt;head&gt; section."
     },
     {
         "type": "multiple",
         "question": "Which tag creates a hyperlink?",
         "options": [
-            "<link>",
-            "<a>",
-            "<href>",
-            "<hyperlink>"
+            "&lt;link&gt;",
+            "&lt;a&gt;",
+            "&lt;href&gt;",
+            "&lt;hyperlink&gt;"
         ],
         "correct": 1,
-        "explanation": "<a> is the anchor tag used to create hyperlinks."
+        "explanation": "&lt;a&gt; is the anchor tag used to create hyperlinks."
     },
     {
         "type": "fill",
         "question": "To make text bold, use the ______ tag.",
         "options": [
-          "&lt;strong&gt; or &lt;b&gt;",
-          "&lt;bold&gt;",
-          "&lt;em&gt;",
-          "&lt;big&gt;"
+            "&lt;strong&gt; or &lt;b&gt;",
+            "&lt;bold&gt;",
+            "&lt;em&gt;",
+            "&lt;big&gt;"
         ],
-          "correct": "&lt;strong&gt; or &lt;b&gt;",
-          "explanation": "Both <strong> and <b> can be used to make text bold."
-      }
-      
+        "correct": "&lt;strong&gt; or &lt;b&gt;",
+        "explanation": "Both &lt;strong&gt; and &lt;b&gt; can be used to make text bold."
+    }
 ]
