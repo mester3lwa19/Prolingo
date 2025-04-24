@@ -1,0 +1,117 @@
+[
+    {
+        "type": "truefalse",
+        "question": "All HTML tags must have a closing tag.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correct": 1,
+        "explanation": "False — some tags like <br> and <img> are self-closing."
+    },
+    {
+        "type": "multiple",
+        "question": "Complete the code to open a link in a new tab:\n&lt;a href=\"https://prolingo.com\" ______&gt;Visit Prolingo!&lt;/a&gt;",
+        "options": [
+            "newtab",
+            "target=\"_blank\"",
+            "open=\"new\"",
+            "window=\"new\""
+        ],
+        "correct": 1,
+        "explanation": "target=\"_blank\" opens the link in a new browser tab."
+    },
+    {
+        "type": "multiple",
+        "question": "What is the correct HTML element for inserting a line break?",
+        "options": [
+            "<lb>",
+            "<break>",
+            "<br>",
+            "<newline>"
+        ],
+        "correct": 2,
+        "explanation": "<br> is the correct HTML tag for a line break."
+    },
+    {
+        "type": "fill",
+        "question": "The ______ attribute in the <img> tag specifies the image path.",
+        "options": [
+            "href",
+            "src",
+            "link",
+            "url"
+        ],
+        "correct": "src",
+        "explanation": "The src attribute is used to specify the image path."
+    },
+    {
+        "type": "truefalse",
+        "question": "HTML stands for \"HyperText Markup Language\" and is a programming language.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correct": 1,
+        "explanation": "False — HTML is a markup language, not a programming language."
+    },
+    {
+        "type": "multiple",
+        "question": "Which tag defines an unordered list?",
+        "options": [
+            "<ol>",
+            "<ul>",
+            "<li>",
+            "<list>"
+        ],
+        "correct": 1,
+        "explanation": "<ul> is used to define an unordered list."
+    },
+    {
+        "type": "fill",
+        "question": "The ______ tag is used for the main heading (largest size).",
+        "options": [
+            "<h6>",
+            "<head>",
+            "<h1>",
+            "<header>"
+        ],
+        "correct": "<h1>",
+        "explanation": "<h1> is the largest heading tag in HTML."
+    },
+    {
+        "type": "truefalse",
+        "question": "The <meta> tag belongs inside the <body> section.",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correct": 1,
+        "explanation": "False — the <meta> tag should be placed in the <head> section."
+    },
+    {
+        "type": "multiple",
+        "question": "Which tag creates a hyperlink?",
+        "options": [
+            "<link>",
+            "<a>",
+            "<href>",
+            "<hyperlink>"
+        ],
+        "correct": 1,
+        "explanation": "<a> is the anchor tag used to create hyperlinks."
+    },
+    {
+        "type": "fill",
+        "question": "To make text bold, use the ______ tag.",
+        "options": [
+          "&lt;strong&gt; or &lt;b&gt;",
+          "&lt;bold&gt;",
+          "&lt;em&gt;",
+          "&lt;big&gt;"
+        ],
+          "correct": "&lt;strong&gt; or &lt;b&gt;",
+          "explanation": "Both <strong> and <b> can be used to make text bold."
+      }
+      
+]
