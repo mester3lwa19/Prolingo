@@ -60,7 +60,80 @@ header.navbar {
 .nav-link:hover::after {
   width: 100%;
 }
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+}
 
+.nav-item:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+.user-profile {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+}
+
+.user-avatar {
+  width: 60px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.user-avatar:hover {
+  transform: scale(1.05);
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-greeting {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+}
+
+.edit-profile-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-top: 4px;
+  transition: color 0.3s ease;
+}
+
+.edit-profile-link:hover {
+  color: #fff;
+}
 .hamburger {
   display: none;
   font-size: 2rem;

@@ -222,6 +222,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-right: 10px;
+  color: var(--background-color);
 }
 
 .password-icon img {
