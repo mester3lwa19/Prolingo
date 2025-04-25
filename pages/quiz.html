@@ -43,13 +43,171 @@
         flex: 1;
         padding: 20px 0;
       }
-      .nav-link:hover {
-  text-decoration-color: #38c3cc !important;
-}
 
-.nav-link.primary-hover:hover {
-  text-decoration-color: #38c3cc !important;
-}
+      .quiz-main {
+        flex: 1;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Improved container with grid layout */
+      .quiz-container {
+        display: grid;
+        grid-template-rows: auto auto 1fr auto auto auto;
+        gap: 20px;
+        width: 100%;
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .quiz-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+      }
+
+      /* Enhanced answer options with better transitions */
+      .answers label {
+        display: flex;
+        align-items: center;
+        background-color: var(--dark-bg);
+        padding: 15px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .answers label:hover {
+        background-color: rgba(255, 175, 26, 0.1);
+        border-color: rgba(255, 175, 26, 0.3);
+        transform: translateX(5px);
+      }
+
+      .answers label:focus-within {
+        outline: 2px solid var(--primary-color);
+        box-shadow: 0 0 0 4px rgba(255, 175, 26, 0.3);
+      }
+
+      /* Add ripple effect for radio inputs */
+      .answers input[type="radio"] {
+        margin-right: 15px;
+        transform: scale(1.2);
+        accent-color: var(--primary-color);
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      .answers input[type="radio"]:checked {
+        transform: scale(1.4);
+      }
+
+      .answers input[type="radio"]:focus {
+        outline: 2px solid var(--primary-color);
+        box-shadow: 0 0 0 4px rgba(255, 175, 26, 0.3);
+      }
+
+      /* Enhanced buttons with better hover effects */
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 0 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .buttons button {
+        padding: 12px 24px;
+        background-color: var(--primary-color);
+        color: var(--dark-text);
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        flex: 1;
+        min-width: 120px;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-size: 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .buttons button:hover {
+        background-color: #e69f17;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .buttons button:focus {
+        outline: 2px solid var(--primary-color);
+        box-shadow: 0 0 0 4px rgba(255, 175, 26, 0.3);
+      }
+
+      .buttons button:active {
+        transform: translateY(-1px);
+      }
+
+      /* Button hover effect with pseudo-element */
+      .buttons button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5px;
+        height: 5px;
+        background: rgba(255, 255, 255, 0.5);
+        opacity: 0;
+        border-radius: 100%;
+        transform: scale(1, 1) translate(-50%);
+        transform-origin: 50% 50%;
+      }
+
+      .buttons button:hover::after {
+        animation: ripple 1s ease-out;
+      }
+
+      @keyframes ripple {
+        0% {
+          transform: scale(0, 0);
+          opacity: 0.5;
+        }
+        100% {
+          transform: scale(20, 20);
+          opacity: 0;
+        }
+      }
+
+      /* Enhanced pagination indicators */
+      .pagination span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: #607d8b;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      .pagination span:hover {
+        background-color: #90a4ae;
+        transform: scale(1.2);
+      }
+
+      .pagination .active {
+        background-color: var(--primary-color);
+        transform: scale(1.2);
+        box-shadow: 0 0 0 3px rgba(255, 175, 26, 0.3);
+      }
+
       /* Breadcrumb Navigation */
       .breadcrumb {
         text-align: center;
@@ -75,8 +233,7 @@
 
       .breadcrumb a:hover {
         color: var(--primary-color);
-}
-
+      }
 
       .breadcrumb a:hover::after {
         color: var(--light-text);
@@ -86,16 +243,6 @@
         margin-left: 6px;
         color: var(--primary-color);
         font-weight: 600;
-      }
-
-      /* Quiz Container */
-      .container {
-        max-width: 800px;
-        margin: 30px auto;
-        padding: 20px;
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
       }
 
       /* Progress Section */
@@ -144,102 +291,6 @@
         line-height: 1.5;
         margin: 0;
         font-size: 1.25rem;
-      }
-
-      /* Answer Options */
-      .answers {
-        display: grid;
-        gap: 12px;
-        margin: 25px 0;
-      }
-
-      .answers label {
-        display: flex;
-        align-items: center;
-        background-color: var(--dark-bg);
-        padding: 15px 20px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-      }
-
-      .answers label:hover {
-        background-color: rgba(255, 175, 26, 0.1);
-        border-color: rgba(255, 175, 26, 0.3);
-      }
-
-      .answers input[type="radio"] {
-        margin-right: 15px;
-        transform: scale(1.2);
-        accent-color: var(--primary-color);
-      }
-
-      /* Buttons */
-      .buttons {
-        display: flex;
-        justify-content: space-between;
-        margin: 30px 0 20px;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .buttons button {
-        padding: 12px 24px;
-        background-color: var(--primary-color);
-        color: var(--dark-text);
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        flex: 1;
-        min-width: 120px;
-        transition: all 0.3s ease;
-        font-size: 1rem;
-      }
-
-      .buttons button:hover {
-        background-color: #e69f17;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      .buttons button:active {
-        transform: translateY(0);
-      }
-
-      .buttons button:disabled {
-        background-color: #607d8b;
-        cursor: not-allowed;
-        transform: none;
-        box-shadow: none;
-        opacity: 0.7;
-      }
-
-      /* Pagination Dots */
-      .pagination {
-        text-align: center;
-        margin: 25px 0;
-      }
-
-      .pagination span {
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        background-color: #607d8b;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .pagination span:hover {
-        background-color: #90a4ae;
-      }
-
-      .pagination .active {
-        background-color: var(--primary-color);
-        transform: scale(1.2);
       }
 
       /* Answer Feedback Section */
@@ -475,16 +526,16 @@
       <div class="hamburger" id="hamburger">☰</div>
     </header>
 
-    <main>
-      <!-- Breadcrumb Navigation -->
+    <main class="quiz-main">
+      <!-- Breadcrumb Navigation - improved with aria attributes -->
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/index.html">Home</a>
         <a href="/pages/practice.html">HTML</a>
-        <span>Basics Quiz</span>
+        <span aria-current="page">Basics Quiz</span>
       </nav>
 
-      <!-- Quiz Container -->
-      <section class="container" aria-labelledby="quizTitle">
+      <!-- Quiz Container - enhanced with better semantics -->
+      <section class="container quiz-container" aria-labelledby="quizTitle">
         <h1 id="quizTitle" class="sr-only">HTML Basics Quiz</h1>
         
         <div class="progress-section">
@@ -498,16 +549,19 @@
         <article class="question" id="questionText" aria-live="polite"></article>
         
         <form id="quizForm" class="answers" aria-labelledby="questionText">
-          <div id="answerOptions" role="radiogroup"></div>
+          <fieldset id="answerOptions" role="radiogroup">
+            <legend class="sr-only">Answer options</legend>
+            <!-- Answer options will be inserted here by JavaScript -->
+          </fieldset>
         </form>
         
         <div class="message" id="message" role="alert" aria-live="assertive"></div>
 
         <div class="buttons">
-          <button id="prevBtn" onclick="goPrevious()" disabled>Previous</button>
-          <button id="checkBtn" onclick="checkAnswer()">Check answer</button>
-          <button id="nextBtn" onclick="goNext()">Next</button>
-         </div>
+          <button id="prevBtn" onclick="QuizApp.goPrevious()" disabled>Previous</button>
+          <button id="checkBtn" onclick="QuizApp.checkAnswer()">Check answer</button>
+          <button id="nextBtn" onclick="QuizApp.goNext()">Next</button>
+        </div>
 
         <nav class="pagination" id="pagination" aria-label="Question navigation"></nav>
 
@@ -518,7 +572,7 @@
       </section>
 
       <!-- Quiz Results Modal -->
-      <div class="modal-overlay" id="resultsModal">
+      <aside class="modal-overlay" id="resultsModal" role="dialog" aria-labelledby="resultsTitle">
         <div class="modal-content">
           <h2 id="resultsTitle">Quiz Completed!</h2>
           <p id="resultsMessage"></p>
@@ -527,7 +581,7 @@
             <button id="closeModal">Back to Lessons</button>
           </div>
         </div>
-      </div>
+      </aside>
     </main>
 
     <!-- Footer -->
@@ -604,291 +658,370 @@
     </footer>
 
     <script>
-      // Quiz Data and State Management
-      const quizData = [];
-      let currentQuestion = 0;
-      let userAnswers = [];
-      let score = 0;
-      
-      // DOM Elements
-      const questionTextEl = document.getElementById('questionText');
-      const answerOptionsEl = document.getElementById('answerOptions');
-      const answerSectionEl = document.getElementById('answerSection');
-      const answerResultEl = document.getElementById('answerResult');
-      const answerExplanationEl = document.getElementById('answerExplanation');
-      const messageEl = document.getElementById('message');
-      const progressTextEl = document.getElementById('progressText');
-      const progressFillEl = document.getElementById('progressFill');
-      const questionNumberEl = document.getElementById('questionNumber');
-      const paginationEl = document.getElementById('pagination');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
-      const checkBtn = document.getElementById('checkBtn');
-      const resultsModal = document.getElementById('resultsModal');
-      const resultsTitle = document.getElementById('resultsTitle');
-      const resultsMessage = document.getElementById('resultsMessage');
-      const retryQuizBtn = document.getElementById('retryQuiz');
-      const closeModalBtn = document.getElementById('closeModal');
-      
-      // Utility Functions
-      function formatQuestionText(text) {
-        // Format code blocks and inline code
-        let formattedText = text.replace(/`([^`]+)`/g, "<code>$1</code>");
+      // Module pattern for better organization
+      const QuizApp = (function() {
+        // Private variables
+        const state = {
+          quizData: [],
+          currentQuestion: 0,
+          userAnswers: [],
+          score: 0,
+          animationInProgress: false
+        };
+
+        // DOM Elements - centralized for easier reference
+        const elements = {
+          questionText: document.getElementById('questionText'),
+          answerOptions: document.getElementById('answerOptions'),
+          answerSection: document.getElementById('answerSection'),
+          answerResult: document.getElementById('answerResult'),
+          answerExplanation: document.getElementById('answerExplanation'),
+          message: document.getElementById('message'),
+          progressText: document.getElementById('progressText'),
+          progressFill: document.getElementById('progressFill'),
+          questionNumber: document.getElementById('questionNumber'),
+          pagination: document.getElementById('pagination'),
+          prevBtn: document.getElementById('prevBtn'),
+          nextBtn: document.getElementById('nextBtn'),
+          checkBtn: document.getElementById('checkBtn'),
+          resultsModal: document.getElementById('resultsModal'),
+          resultsTitle: document.getElementById('resultsTitle'),
+          resultsMessage: document.getElementById('resultsMessage'),
+          retryQuizBtn: document.getElementById('retryQuiz'),
+          closeModalBtn: document.getElementById('closeModal')
+        };
+
+        // Utility Functions
+        function formatQuestionText(text) {
+          // Format code blocks and inline code
+          let formattedText = text.replace(/`([^`]+)`/g, "<code>$1</code>");
+          
+          // Format multi-line code blocks (between triple backticks)
+          formattedText = formattedText.replace(/```([^`]+)```/g, "<pre><code>$1</code></pre>");
+          
+          return formattedText;
+        }
         
-        // Format multi-line code blocks (between triple backticks)
-        formattedText = formattedText.replace(/```([^`]+)```/g, "<pre><code>$1</code></pre>");
-        
-        return formattedText;
-      }
-      
-      function updateButtonStates() {
-    prevBtn.disabled = currentQuestion === 0;
-    
-    // Always enable the Next/Finish button (remove the disabled condition)
-    nextBtn.disabled = false;
-    
-    if (currentQuestion === quizData.length - 1) {
-        nextBtn.textContent = 'Finish Quiz';
-    } else {
-        nextBtn.textContent = 'Next';
-    }
-}
-      // Load questions from JSON file
-      function loadQuiz() {
-        fetch("../html_quiz_questions.json")
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
+        function updateButtonStates() {
+          elements.prevBtn.disabled = state.currentQuestion === 0;
+          elements.nextBtn.disabled = false;
+          
+          if (state.currentQuestion === state.quizData.length - 1) {
+            elements.nextBtn.textContent = 'Finish Quiz';
+          } else {
+            elements.nextBtn.textContent = 'Next';
+          }
+        }
+
+        // Animation Functions
+        function animateElement(element, animationClass) {
+          return new Promise(resolve => {
+            element.classList.add(animationClass);
+            
+            function handleAnimationEnd() {
+              element.classList.remove(animationClass);
+              element.removeEventListener('animationend', handleAnimationEnd);
+              resolve();
             }
-            return response.json();
-          })
-          .then((data) => {
-            quizData.push(...data);
-            userAnswers = new Array(quizData.length).fill(null);
-            loadQuestion();
-          })
-          .catch((error) => {
-            console.error("Error loading quiz questions:", error);
-            questionTextEl.innerHTML = `
-              <h2>Error loading questions. Please try again later.</h2>
-              <p>${error.message}</p>
-            `;
-            checkBtn.disabled = true;
-            nextBtn.disabled = true;
+            
+            element.addEventListener('animationend', handleAnimationEnd);
           });
-      }
-      
-      // Load Current Question
-      function loadQuestion() {
-        if (quizData.length === 0) return;
-        
-        const q = quizData[currentQuestion];
-        
-        // Update question text with formatted content
-        questionTextEl.innerHTML = `<h2>${formatQuestionText(q.question)}</h2>`;
-        
-        // Create answer options
-        let optionsHTML = '';
-        
-        if (q.type === "fill") {
-          optionsHTML = q.options.map((opt, idx) => `
-            <label>
-              <input type="radio" name="answer" value="${opt}" 
-                     ${userAnswers[currentQuestion] === opt ? 'checked' : ''} />
-              ${opt}
-            </label>
-          `).join("");
-        } else {
-          optionsHTML = q.options.map((opt, idx) => `
-            <label>
-              <input type="radio" name="answer" value="${idx}" 
-                     ${userAnswers[currentQuestion] === idx ? 'checked' : ''} />
-              ${opt}
-            </label>
-          `).join("");
+        }
+
+        // Core Quiz Functions
+        function loadQuiz() {
+          fetch("../html_quiz_questions.json")
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+              return response.json();
+            })
+            .then(data => {
+              state.quizData = [...data];
+              state.userAnswers = new Array(state.quizData.length).fill(null);
+              loadQuestion();
+            })
+            .catch(error => {
+              console.error("Error loading quiz questions:", error);
+              elements.questionText.innerHTML = `
+                <h2>Error loading questions. Please try again later.</h2>
+                <p>${error.message}</p>
+              `;
+              elements.checkBtn.disabled = true;
+              elements.nextBtn.disabled = true;
+            });
         }
         
-        answerOptionsEl.innerHTML = optionsHTML;
-        answerSectionEl.style.display = "none";
-        messageEl.textContent = "";
-        
-        // Update progress indicators
-        questionNumberEl.textContent = `Question ${currentQuestion + 1}`;
-        progressTextEl.textContent = `📄 ${currentQuestion + 1}/${quizData.length} Questions Completed (${Math.round(
-          ((currentQuestion + 1) / quizData.length) * 100
-        )}%)`;
-        progressFillEl.style.width = `${((currentQuestion + 1) / quizData.length) * 100}%`;
-        
-        // Update pagination dots
-        const dots = quizData.map((_, i) => `
-          <span class="${i === currentQuestion ? 'active' : ''}" 
-                onclick="goToQuestion(${i})"
-                aria-label="Go to question ${i + 1}"></span>
-        `).join("");
-        paginationEl.innerHTML = dots;
-        
-        // Update button states
-        updateButtonStates();
-      }
-      
-      // Navigation Functions
-      function goToQuestion(index) {
-        if (index >= 0 && index < quizData.length) {
-          currentQuestion = index;
-          loadQuestion();
-        }
-      }
-      
-      function goPrevious() {
-        if (currentQuestion > 0) {
-          currentQuestion--;
-          loadQuestion();
-        }
-      }
-      
-      function goNext() {
-    if (currentQuestion < quizData.length - 1) {
-        currentQuestion++;
-        loadQuestion();
-    } else {
-        // This will now execute when clicking "Finish Quiz"
-        showResults();
-    }
-}
-      
-      // Answer Checking and Validation
-      function checkAnswer() {
-        const selected = document.querySelector('input[name="answer"]:checked');
-        
-        if (!selected) {
-          messageEl.textContent = "Please select an answer first!";
-          messageEl.style.color = "var(--primary-color)";
-          return;
-        }
-        
-        const q = quizData[currentQuestion];
-        let isCorrect = false;
-        let correctAnswer = "";
-        
-        if (q.type === "fill") {
-          isCorrect = selected.value === q.correct;
-          correctAnswer = q.correct;
-        } else {
-          isCorrect = parseInt(selected.value) === q.correct;
-          correctAnswer = q.options[q.correct];
-        }
-        
-        // Store user answer
-        userAnswers[currentQuestion] = q.type === "fill" ? selected.value : parseInt(selected.value);
-        
-        // Update score if this is the first time answering
-        if (isCorrect && userAnswers[currentQuestion] !== null) {
-          score++;
-        }
-        
-        // Show feedback
-        answerResultEl.textContent = isCorrect 
-          ? "✅ Correct! Well done!" 
-          : "❌ Incorrect. The correct answer is:";
+        async function loadQuestion() {
+          if (state.quizData.length === 0) return;
           
-        answerResultEl.style.color = isCorrect ? "var(--correct-answer)" : "var(--wrong-answer)";
-        
-        if (!isCorrect) {
-          answerResultEl.innerHTML += ` <strong>${correctAnswer}</strong>`;
+          if (state.animationInProgress) return;
+          state.animationInProgress = true;
+          
+          // Add fade-out animation
+          await animateElement(elements.questionText, 'animate__fadeOut');
+          
+          const q = state.quizData[state.currentQuestion];
+          
+          // Update question text with formatted content
+          elements.questionText.innerHTML = `<h2>${formatQuestionText(q.question)}</h2>`;
+          
+          // Create answer options
+          let optionsHTML = '';
+          
+          if (q.type === "fill") {
+            optionsHTML = q.options.map((opt, idx) => `
+              <label>
+                <input type="radio" name="answer" value="${opt}" 
+                       ${state.userAnswers[state.currentQuestion] === opt ? 'checked' : ''} />
+                ${opt}
+              </label>
+            `).join("");
+          } else {
+            optionsHTML = q.options.map((opt, idx) => `
+              <label>
+                <input type="radio" name="answer" value="${idx}" 
+                       ${state.userAnswers[state.currentQuestion] === idx ? 'checked' : ''} />
+                ${opt}
+              </label>
+            `).join("");
+          }
+          
+          elements.answerOptions.innerHTML = optionsHTML;
+          elements.answerSection.style.display = "none";
+          elements.message.textContent = "";
+          
+          // Update progress indicators
+          elements.questionNumber.textContent = `Question ${state.currentQuestion + 1}`;
+          elements.progressText.textContent = `📄 ${state.currentQuestion + 1}/${state.quizData.length} Questions Completed (${Math.round(
+            ((state.currentQuestion + 1) / state.quizData.length) * 100
+          )}%)`;
+          
+          // Animate progress bar
+          const newWidth = `${((state.currentQuestion + 1) / state.quizData.length) * 100}%`;
+          elements.progressFill.style.width = newWidth;
+          
+          // Update pagination dots
+          const dots = state.quizData.map((_, i) => `
+            <span class="${i === state.currentQuestion ? 'active' : ''}" 
+                  onclick="QuizApp.goToQuestion(${i})"
+                  aria-label="Go to question ${i + 1}"></span>
+          `).join("");
+          elements.pagination.innerHTML = dots;
+          
+          // Update button states
+          updateButtonStates();
+          
+          // Add fade-in animation
+          await animateElement(elements.questionText, 'animate__fadeIn');
+          state.animationInProgress = false;
+          
+          // Add event listeners to radio buttons for keyboard accessibility
+          document.querySelectorAll('input[type="radio"]').forEach(radio => {
+            radio.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter') {
+                e.target.checked = true;
+              }
+            });
+          });
         }
         
-        answerExplanationEl.textContent = q.explanation;
-        answerSectionEl.style.display = "block";
-        
-        // Scroll to feedback for better UX
-        answerSectionEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-      
-      // Results Modal
-      function showResults() {
-        const correctCount = calculateScore();
-        const percentage = Math.round((correctCount / quizData.length) * 100);
-        
-        resultsTitle.textContent = "Quiz Completed!";
-        resultsMessage.innerHTML = `
-          You scored <strong>${correctCount} out of ${quizData.length}</strong> 
-          (${percentage}%)<br><br>
-          ${getResultMessage(percentage)}
-        `;
-        
-        resultsModal.classList.add('active');
-      }
-      
-      function calculateScore() {
-        let correctCount = 0;
-        
-        for (let i = 0; i < quizData.length; i++) {
-          const q = quizData[i];
-          const userAnswer = userAnswers[i];
-          
-          if (userAnswer !== null) {
-            if (q.type === "fill") {
-              if (userAnswer === q.correct) correctCount++;
-            } else {
-              if (userAnswer === q.correct) correctCount++;
-            }
+        // Navigation Functions
+        function goToQuestion(index) {
+          if (index >= 0 && index < state.quizData.length) {
+            state.currentQuestion = index;
+            loadQuestion();
           }
         }
         
-        return correctCount;
-      }
-      
-      function getResultMessage(percentage) {
-        if (percentage >= 90) return "Excellent work! You've mastered these concepts!";
-        if (percentage >= 70) return "Great job! You have a good understanding.";
-        if (percentage >= 50) return "Not bad! Review the questions you missed to improve.";
-        return "Keep practicing! Review the lessons and try again.";
-      }
-      
-      function resetQuiz() {
-        currentQuestion = 0;
-        userAnswers = new Array(quizData.length).fill(null);
-        score = 0;
-        loadQuestion();
-        resultsModal.classList.remove('active');
-      }
-      
-      // Event Listeners
-      retryQuizBtn.addEventListener('click', resetQuiz);
-      closeModalBtn.addEventListener('click', () => {
-        resultsModal.classList.remove('active');
-        window.location.href = "/pages/lessons.html";
-      });
-      
-      // Keyboard Navigation
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft' && currentQuestion > 0) {
-          goPrevious();
-        } else if (e.key === 'ArrowRight' && currentQuestion < quizData.length - 1) {
-          goNext();
-        } else if (e.key === 'Enter') {
-          checkAnswer();
+        function goPrevious() {
+          if (state.currentQuestion > 0) {
+            state.currentQuestion--;
+            loadQuestion();
+          }
         }
-      });
-      
-      // Initialize Quiz
-      document.addEventListener('DOMContentLoaded', () => {
-        // Accessibility improvements
-        document.querySelectorAll('input[type="radio"]').forEach(radio => {
-          radio.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-              e.target.checked = true;
+        
+        function goNext() {
+          if (state.currentQuestion < state.quizData.length - 1) {
+            state.currentQuestion++;
+            loadQuestion();
+          } else {
+            showResults();
+          }
+        }
+        
+        // Answer Checking and Validation
+        function checkAnswer() {
+          const selected = document.querySelector('input[name="answer"]:checked');
+          
+          if (!selected) {
+            elements.message.textContent = "Please select an answer first!";
+            elements.message.style.color = "var(--primary-color)";
+            // Add shake animation for error feedback
+            animateElement(elements.message, 'animate__shakeX');
+            return;
+          }
+          
+          const q = state.quizData[state.currentQuestion];
+          let isCorrect = false;
+          let correctAnswer = "";
+          
+          if (q.type === "fill") {
+            isCorrect = selected.value === q.correct;
+            correctAnswer = q.correct;
+          } else {
+            isCorrect = parseInt(selected.value) === q.correct;
+            correctAnswer = q.options[q.correct];
+          }
+          
+          // Store user answer
+          state.userAnswers[state.currentQuestion] = q.type === "fill" ? selected.value : parseInt(selected.value);
+          
+          // Update score if this is the first time answering correctly
+          if (isCorrect && state.userAnswers[state.currentQuestion] !== null) {
+            state.score++;
+          }
+          
+          // Show feedback
+          elements.answerResultEl.textContent = isCorrect 
+            ? "✅ Correct! Well done!" 
+            : "❌ Incorrect. The correct answer is:";
+            
+          elements.answerResult.style.color = isCorrect ? "var(--correct-answer)" : "var(--wrong-answer)";
+          
+          if (!isCorrect) {
+            elements.answerResult.innerHTML += ` <strong>${correctAnswer}</strong>`;
+          }
+          
+          elements.answerExplanation.textContent = q.explanation;
+          elements.answerSection.style.display = "block";
+          
+          // Animate the answer section appearance
+          animateElement(elements.answerSection, 'animate__fadeIn');
+          
+          // Scroll to feedback for better UX
+          elements.answerSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        // Results Modal
+        function showResults() {
+          const correctCount = calculateScore();
+          const percentage = Math.round((correctCount / state.quizData.length) * 100);
+          
+          elements.resultsTitle.textContent = "Quiz Completed!";
+          elements.resultsMessage.innerHTML = `
+            You scored <strong>${correctCount} out of ${state.quizData.length}</strong> 
+            (${percentage}%)<br><br>
+            ${getResultMessage(percentage)}
+          `;
+          
+          elements.resultsModal.classList.add('active');
+        }
+        
+        function calculateScore() {
+          let correctCount = 0;
+          
+          for (let i = 0; i < state.quizData.length; i++) {
+            const q = state.quizData[i];
+            const userAnswer = state.userAnswers[i];
+            
+            if (userAnswer !== null) {
+              if (q.type === "fill") {
+                if (userAnswer === q.correct) correctCount++;
+              } else {
+                if (userAnswer === q.correct) correctCount++;
+              }
+            }
+          }
+          
+          return correctCount;
+        }
+        
+        function getResultMessage(percentage) {
+          if (percentage >= 90) return "Excellent work! You've mastered these concepts!";
+          if (percentage >= 70) return "Great job! You have a good understanding.";
+          if (percentage >= 50) return "Not bad! Review the questions you missed to improve.";
+          return "Keep practicing! Review the lessons and try again.";
+        }
+        
+        function resetQuiz() {
+          state.currentQuestion = 0;
+          state.userAnswers = new Array(state.quizData.length).fill(null);
+          state.score = 0;
+          loadQuestion();
+          elements.resultsModal.classList.remove('active');
+        }
+        
+        // Event Handlers - Initialization
+        function init() {
+          // Add event listeners
+          elements.retryQuizBtn.addEventListener('click', resetQuiz);
+          elements.closeModalBtn.addEventListener('click', () => {
+            elements.resultsModal.classList.remove('active');
+            window.location.href = "/pages/lessons.html";
+          });
+          
+          // Keyboard Navigation
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && state.currentQuestion > 0) {
+              goPrevious();
+            } else if (e.key === 'ArrowRight' && state.currentQuestion < state.quizData.length - 1) {
+              goNext();
+            } else if (e.key === 'Enter') {
+              checkAnswer();
             }
           });
-        });
+          
+          // Load the quiz
+          loadQuiz();
+        }
         
-        // Load the quiz
-        loadQuiz();
-      });
+        // Public API
+        return {
+          init,
+          goToQuestion,
+          goPrevious,
+          goNext,
+          checkAnswer,
+          resetQuiz
+        };
+      })();
       
-      // Screen Reader Only Utility Class
-      const style = document.createElement('style');
-      style.textContent = `
+      // Initialize the app when DOM is loaded
+      document.addEventListener('DOMContentLoaded', QuizApp.init);
+
+      // Add animation styles
+      const animationStyle = document.createElement('style');
+      animationStyle.textContent = `
+        .animate__fadeIn {
+          animation: fadeIn 0.5s ease forwards;
+        }
+        
+        .animate__fadeOut {
+          animation: fadeOut 0.3s ease forwards;
+        }
+        
+        .animate__shakeX {
+          animation: shakeX 0.8s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(10px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeOut {
+          from { opacity: 1; transform: translateY(0); }
+          to { opacity: 0; transform: translateY(-10px); }
+        }
+        
+        @keyframes shakeX {
+          0%, 100% { transform: translateX(0); }
+          10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+          20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
         .sr-only {
           position: absolute;
           width: 1px;
@@ -901,7 +1034,7 @@
           border-width: 0;
         }
       `;
-      document.head.appendChild(style);
+      document.head.appendChild(animationStyle);
     </script>
   </body>
 </html>
