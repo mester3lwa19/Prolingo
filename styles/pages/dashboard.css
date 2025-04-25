@@ -9,14 +9,177 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  overflow-y: auto;
+
 }
 
 .content-wrapper {
   padding: 37px 40px;
   flex: 1;
-  max-width: 1200px;
-  margin: 0 auto;
+}
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.welcome-box {
+  background: #1f393b;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.welcome-text h1 {
+  font-size: var(--font-25);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 10px;
+}
+
+.welcome-text p {
+  font-size: var(--font-16);
+  margin: 5px 0;
+}
+
+.progress-bar {
   width: 100%;
+  background: #ccc;
+  border-radius: 10px;
+  height: 10px;
+  margin: 10px 0;
+}
+
+.progress-fill {
+  background: var(--primary-color);
+  height: 100%;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.daily-task {
+  margin: 10px 0;
+}
+
+.streak-section {
+  background: #1f393b;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.streak-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 40px;
+  margin-top: 15px;
+}
+
+.streak-grid .day {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-13);
+  color: var(--black);
+}
+
+.streak-grid .active {
+  background: var(--secondary-color);
+}
+
+.streak-grid .streak {
+  background: var(--secondary-color);
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/3/39/FireIcon.svg");
+  background-size: cover;
+  background-position: center;
+}
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day,
+.empty {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background: #eee;
+  border-radius: 6px;
+}
+
+.streak {
+  background: #4caf50;
+  color: white;
+}
+
+.stats-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.daily-quest,
+.profile-stats,
+.continue-learning {
+  background: #1f393b;
+  padding: 20px;
+  border-radius: 12px;
+}
+.daily-quest h4,
+.profile-stats h4,
+.continue-learning h4,
+.streak-section h3 {
+  font-size: var(--font-31);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 10px;
+}
+
+.quest-bar {
+  width: 100%;
+  background: #ccc;
+  border-radius: 10px;
+  height: 10px;
+  margin-top: 10px;
+}
+
+.quest-fill {
+  background: var(--primary-color);
+  height: 100%;
+  width: 40%;
+  border-radius: 10px;
+}
+
+.continue-learning ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.continue-learning ul li {
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  margin-top: 20px;
+}
+
+@media (max-width: 1200px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .streak-grid {
+
+    gap: 16px;
+  }
+  .streak-grid .day {
+    width: 30px;
+    height: 30px;
+  }
 }

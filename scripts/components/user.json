@@ -1,0 +1,28 @@
+{
+  "user": {
+    "name": "Ezz",
+    "level": 2,
+    "progress": 60,
+    "dailyTask": "Solve a JS loop problem to reach your daily streak",
+    "xp": 12804,
+    "activeDays": 20,
+    "languagesEnrolled": 5,
+    "lessonsCompleted": 30,
+    "streakDates": [
+      "2025-04-01",
+      "2025-04-02",
+      "2025-04-03",
+      "2025-04-05",
+      "2025-04-08",
+      "2025-04-09",
+      "2025-04-10",
+      "2025-04-11",
+      "2025-04-12",
+      "2025-04-15",
+      "2025-04-19",
+      "2025-04-20"
+    ],
+    "dailyQuestProgress": 80,
+    "continueLearning": ["Basic Selectors", "Introduction to Python"]
+  }
+}
