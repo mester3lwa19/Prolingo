@@ -20,28 +20,28 @@
 <body>
     <!-- Start Header -->
     <header class="navbar">
-    
+
         <div class="logo-container">
             <img src="./assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
             <div class="logo-text">Prolingo</div>
         </div>
         <nav class="nav-links">
-            <a class="nav-link" href="#">Home</a>
-            <a class="nav-link" href="#">About</a>
-            <a class="nav-link" href="#">Contact</a>
-            <a href="#" class="btn-outline">Login</a>
-            <a href="#" class="btn-primary">Get started</a>
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="#about">About</a> <!-- Placeholder -->
+            <a class="nav-link" href="#contact">Contact</a> <!-- Placeholder -->
+            <a href="/pages/login.html" class="btn-outline">Login</a>
+            <a href="/pages/signup.html" class="btn-primary">Get started</a>
         </nav>
         <div class="hamburger" id="hamburger">&#9776;</div>
     </header>
 
     <aside class="sidebar" id="sidebar">
         <div class="close-btn" id="closeSidebar">&times;</div>
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
         <a href="#">About</a>
         <a href="#">Contact</a>
-        <a href="#">Login</a>
-        <a href="#">Get started</a>
+        <a href="/pages/login.html">Login</a>
+        <a href="/pages/signup.html">Get started</a>
     </aside>
     <!-- End Header -->
 
@@ -119,11 +119,11 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First name</label>
-                        <input type="text" id="firstName" placeholder="Ali">
+                        <input type="text" id="firstName" placeholder="Karim">
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last name</label>
-                        <input type="text" id="lastName" placeholder="Khaled">
+                        <input type="text" id="lastName" placeholder="Wael">
                     </div>
                 </div>
 
@@ -134,22 +134,25 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="text" id="phone" placeholder="(414) 804 – 987">
+                        <input type="text" id="phone" placeholder="(+20) 128 – 853 – 4704">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="interest">Interest</label>
-                        <input type="text" id="interest" placeholder="ex: Front-End Development">
+                        <input type="text" id="interest" placeholder="راشق في اي حاجة حابب تعلمها">
                     </div>
                     <div class="form-group">
                         <label for="level">Level</label>
                         <select id="level">
                             <option value="">Select your level</option>
+                            <option>علي ما تفرج</option>
                             <option>Beginner</option>
                             <option>Intermediate</option>
                             <option>Advanced</option>
+                            <option>Expert</option>
+                            <option>Master</option>
                         </select>
                     </div>
                 </div>
@@ -287,7 +290,6 @@
         </div>
     </section>
     <!--End Language-->
-
 
     <!--Start FAQ-->
     <section class="faq">

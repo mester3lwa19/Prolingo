@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { name: "Malak Amr", score: 4050, sign: 7 },
     { name: "Mariam Islam", score: 3500, sign: 9 },
     { name: "Fayrouz Tarek", score: 5000, sign: 8 },
-    { name: "Karim Wael", score: 4500, sign: 5 },
+    { name: "Karim Wael", score: 5500, sign: 7 },
     { name: "Ali Khaled", score: 5075, sign: 6 },
 
   ];
