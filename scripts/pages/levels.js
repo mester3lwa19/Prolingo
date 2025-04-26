@@ -157,7 +157,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
 
         // In a real app, this would navigate to the lesson
-        alert(`Starting Level ${level.number}: ${level.title}`);
+        // alert(`Starting Level ${level.number}: ${level.title}`);
+        window.location.href = '/pages/level.html';
       });
 
       levelsGrid.appendChild(levelCard);
