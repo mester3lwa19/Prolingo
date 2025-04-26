@@ -7,20 +7,29 @@
 }
 
 body {
-  font-family: var(--font-family);
-  background: var(--main-bg-color);
-  color: var(--white);
-  font-size: var(--font-16);
-  line-height: 1.5;
+  font-family: "Poppins", "DM Sans", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 :root {
   /* Colors */
   --main-bg-color: #1A2F30;
   --black: #061617;
-  --primary-color: #38c3cc;
+  --primary-color: #00b1bc;
   --secondary-color: #ffaf1a;
   --white: #f4feff;
+  --background-color: #254446;
+  --text-color: #faffff;
+  --secondary-text: #adabc3;
+  --border-color: rgba(250, 255, 255, 0.55);
+  --error-color: #ff6b6b;
+  --success-color: #6bcb77;
+  --card-hover-color: rgba(0, 253, 255, 0.1);
 
   /* Font */
   --font-family: "Poppins", sans-serif;
@@ -93,3 +102,20 @@ h2 {
 }
 
 /* End Global Styles */
+
+/* Background Gradient */
+.background-gradient {
+  position: fixed;
+  width: 2493px;
+  height: 2493px;
+  right: -2005px;
+  bottom: -2091px;
+  background: radial-gradient(ellipse 46.26% 46.26% at 96.37% 50.11%,
+      rgba(56, 195, 204, 0.3) 0%,
+      rgba(28, 97.5, 102, 0.3) 100%);
+  box-shadow: 15px 15px 15px;
+  border-radius: 9999px;
+  filter: blur(7.5px);
+  z-index: -1;
+  transform: rotate(180deg);
+}
