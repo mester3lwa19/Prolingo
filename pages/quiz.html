@@ -1,1040 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>ProLingo Quiz</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Test your HTML knowledge with ProLingo's interactive quiz">
-    <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Inter:wght@400;500&family=Poppins:wght@400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../styles/components/navbar.css" />
-    <link rel="stylesheet" href="../styles/components/footer.css" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML Quiz App</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/main.css" />
-    <style>
-      :root {
-        --primary-color: #ffaf1a;
-        --secondary-color: #254446;
-        --dark-bg: #1c313a;
-        --light-text: #ffffff;
-        --dark-text: #333333;
-        --progress-bg: #455a64;
-        --correct-answer: #4caf50;
-        --wrong-answer: #f44336;
-      }
-
-      body {
-        margin: 0;
-        font-family: "DM Sans", "Segoe UI", sans-serif;
-        background-color: var(--secondary-color);
-        color: var(--light-text);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      main {
-        flex: 1;
-        padding: 20px 0;
-      }
-
-      .quiz-main {
-        flex: 1;
-        padding: 20px 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      /* Improved container with grid layout */
-      .quiz-container {
-        display: grid;
-        grid-template-rows: auto auto 1fr auto auto auto;
-        gap: 20px;
-        width: 100%;
-        max-width: 800px;
-        margin: 30px auto;
-        padding: 20px;
-        background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .quiz-container:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
-      }
-
-      /* Enhanced answer options with better transitions */
-      .answers label {
-        display: flex;
-        align-items: center;
-        background-color: var(--dark-bg);
-        padding: 15px 20px;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        border: 2px solid transparent;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .answers label:hover {
-        background-color: rgba(255, 175, 26, 0.1);
-        border-color: rgba(255, 175, 26, 0.3);
-        transform: translateX(5px);
-      }
-
-      .answers label:focus-within {
-        outline: 2px solid var(--primary-color);
-        box-shadow: 0 0 0 4px rgba(255, 175, 26, 0.3);
-      }
-
-      /* Add ripple effect for radio inputs */
-      .answers input[type="radio"] {
-        margin-right: 15px;
-        transform: scale(1.2);
-        accent-color: var(--primary-color);
-        cursor: pointer;
-        transition: transform 0.2s ease;
-      }
-
-      .answers input[type="radio"]:checked {
-        transform: scale(1.4);
-      }
-
-      .answers input[type="radio"]:focus {
-        outline: 2px solid var(--primary-color);
-        box-shadow: 0 0 0 4px rgba(255, 175, 26, 0.3);
-      }
-
-      /* Enhanced buttons with better hover effects */
-      .buttons {
-        display: flex;
-        justify-content: space-between;
-        margin: 30px 0 20px;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .buttons button {
-        padding: 12px 24px;
-        background-color: var(--primary-color);
-        color: var(--dark-text);
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        flex: 1;
-        min-width: 120px;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        font-size: 1rem;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .buttons button:hover {
-        background-color: #e69f17;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-      }
-
-      .buttons button:focus {
-        outline: 2px solid var(--primary-color);
-        box-shadow: 0 0 0 4px rgba(255, 175, 26, 0.3);
-      }
-
-      .buttons button:active {
-        transform: translateY(-1px);
-      }
-
-      /* Button hover effect with pseudo-element */
-      .buttons button::after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 5px;
-        height: 5px;
-        background: rgba(255, 255, 255, 0.5);
-        opacity: 0;
-        border-radius: 100%;
-        transform: scale(1, 1) translate(-50%);
-        transform-origin: 50% 50%;
-      }
-
-      .buttons button:hover::after {
-        animation: ripple 1s ease-out;
-      }
-
-      @keyframes ripple {
-        0% {
-          transform: scale(0, 0);
-          opacity: 0.5;
-        }
-        100% {
-          transform: scale(20, 20);
-          opacity: 0;
-        }
-      }
-
-      /* Enhanced pagination indicators */
-      .pagination span {
-        display: inline-block;
-        width: 12px;
-        height: 12px;
-        background-color: #607d8b;
-        border-radius: 50%;
-        margin: 0 5px;
-        cursor: pointer;
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      }
-
-      .pagination span:hover {
-        background-color: #90a4ae;
-        transform: scale(1.2);
-      }
-
-      .pagination .active {
-        background-color: var(--primary-color);
-        transform: scale(1.2);
-        box-shadow: 0 0 0 3px rgba(255, 175, 26, 0.3);
-      }
-
-      /* Breadcrumb Navigation */
-      .breadcrumb {
-        text-align: center;
-        font-size: 1.25rem;
-        font-weight: 500;
-        margin: 20px 0;
-        padding: 0 20px;
-      }
-
-      .breadcrumb a {
-        color: var(--light-text);
-        text-decoration: none;
-        margin: 0 6px;
-        transition: color 0.3s ease;
-        position: relative;
-      }
-
-      .breadcrumb a:not(:last-child)::after {
-        content: ">";
-        margin-left: 10px;
-        color: var(--light-text);
-      }
-
-      .breadcrumb a:hover {
-        color: var(--primary-color);
-      }
-
-      .breadcrumb a:hover::after {
-        color: var(--light-text);
-      }
-
-      .breadcrumb span {
-        margin-left: 6px;
-        color: var(--primary-color);
-        font-weight: 600;
-      }
-
-      /* Progress Section */
-      .progress-section {
-        margin-bottom: 30px;
-      }
-
-      #progressText {
-        margin-bottom: 8px;
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.8);
-      }
-
-      .progress-bar {
-        background-color: var(--progress-bg);
-        border-radius: 10px;
-        overflow: hidden;
-        height: 12px;
-        margin-bottom: 15px;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
-      }
-
-      .progress-fill {
-        height: 100%;
-        background-color: var(--primary-color);
-        width: 0;
-        transition: width 0.5s ease;
-      }
-
-      .question-number {
-        text-align: right;
-        font-weight: 300;
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      /* Question Section */
-      .question {
-        margin: 25px 0;
-        padding: 15px;
-        background-color: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-      }
-
-      .question h2 {
-        line-height: 1.5;
-        margin: 0;
-        font-size: 1.25rem;
-      }
-
-      /* Answer Feedback Section */
-      .answer-section {
-        background-color: var(--dark-bg);
-        padding: 20px;
-        border-left: 6px solid var(--primary-color);
-        margin-top: 30px;
-        border-radius: 8px;
-        display: none;
-        animation: fadeIn 0.5s ease;
-      }
-
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-      }
-
-      .answer-section h3 {
-        margin-top: 0;
-        color: var(--primary-color);
-      }
-
-      .answer-section p {
-        margin-bottom: 0;
-        line-height: 1.6;
-      }
-
-      .message {
-        color: var(--primary-color);
-        font-weight: 600;
-        margin: 15px 0;
-        text-align: center;
-        min-height: 24px;
-      }
-
-      /* Code Formatting */
-      code {
-        background-color: rgba(255, 255, 255, 0.1);
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-family: "Courier New", monospace;
-        font-size: 0.9em;
-        color: #f8f8f2;
-      }
-
-      pre {
-        background-color: rgba(0, 0, 0, 0.3);
-        padding: 12px;
-        border-radius: 6px;
-        overflow-x: auto;
-        font-family: "Courier New", monospace;
-        margin: 15px 0;
-        line-height: 1.5;
-        font-size: 0.9rem;
-      }
-
-      pre code {
-        background-color: transparent;
-        padding: 0;
-        border-radius: 0;
-      }
-
-      /* Quiz Results Modal */
-      .modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      .modal-overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .modal-content {
-        background-color: var(--secondary-color);
-        padding: 30px;
-        border-radius: 12px;
-        max-width: 500px;
-        width: 90%;
-        text-align: center;
-        transform: translateY(-20px);
-        transition: transform 0.3s ease;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      }
-
-      .modal-overlay.active .modal-content {
-        transform: translateY(0);
-      }
-
-      .modal-content h2 {
-        color: var(--primary-color);
-        margin-top: 0;
-      }
-
-      .modal-content p {
-        margin-bottom: 25px;
-        font-size: 1.1rem;
-      }
-
-      .modal-actions {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .modal-actions button {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 6px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-
-      .modal-actions button:first-child {
-        background-color: var(--primary-color);
-        color: var(--dark-text);
-      }
-
-      .modal-actions button:last-child {
-        background-color: transparent;
-        color: var(--light-text);
-        border: 1px solid var(--light-text);
-      }
-
-      .modal-actions button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 768px) {
-        .container {
-          padding: 15px;
-          margin: 20px 15px;
-        }
-
-        .question-number {
-          text-align: left;
-        }
-
-        .buttons {
-          flex-direction: column;
-          align-items: stretch;
-        }
-
-        .buttons button {
-          width: 100%;
-        }
-
-        .answers label {
-          padding: 12px 15px;
-        }
-
-        .question h2 {
-          font-size: 1.1rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .breadcrumb {
-          font-size: 1rem;
-        }
-
-        .question {
-          padding: 10px;
-        }
-
-        .answers label {
-          font-size: 0.95rem;
-          padding: 10px 12px;
-        }
-
-        .buttons button {
-          padding: 10px 15px;
-          font-size: 0.9rem;
-        }
-
-        .answer-section {
-          padding: 15px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <!-- Header with Navigation -->
-    <header class="navbar animate__animated animate__fadeInDown">
-      <div class="nav-left">
-        <img
-          src="../assets/images/logo.svg"
-          alt="Prolingo Logo"
-          class="logo-img"
-        />
+    <link rel="stylesheet" href="../styles/pages/quiz.css" />
+    <link rel="stylesheet" href="../styles/components/footer.css" />
+    <link rel="stylesheet" href="../styles/components/dashobardNavbar.css" />
+  <script src="../scripts/pages/quiz.js" defer></script>
+</head>
+
+<body>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="logo-container">
+        <img src="../assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
         <div class="logo-text">Prolingo</div>
       </div>
-      <nav class="nav-links">
-        <a class="nav-link primary-hover hover-effect" href="/index.html">Home</a>
-        <a class="nav-link primary-hover hover-effect" href="/pages/lessons.html">Lessons</a>
-      </nav>
       <div class="user-profile">
-        <img
-          src="../assets/images/person.png"
-          alt="User Avatar"
-          class="user-avatar"
-        />
+        <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
         <div class="user-info">
           <div class="user-greeting">Hi, Ezz</div>
-          <a href="/pages/profile.html" class="edit-profile-link hover-effect">
-            Edit Profile
-            <img
-              src="../assets/images/Chevron right.svg"
-              alt=""
-              width="15"
-              height="15"
-              style="margin-left: 4px"
-            />
+          <a href="#" class="edit-profile-link">
+            <span>Edit Profile</span>
+            <img src="../assets/images/Chevron right.svg" alt="Edit" width="15">
           </a>
         </div>
       </div>
-      <div class="hamburger" id="hamburger">☰</div>
-    </header>
+      <a href="#" class="nav-item">
+        <img src="../assets/images/homeIcon.svg" alt="Learn" class="nav-icon">
+        <span>Home</span>
+      </a>
+      <a href="#" class="nav-item">
+        <img src="../assets/images/dashicons_welcome-learn-more.svg" alt="Learn" class="nav-icon">
+        <span>Learn</span>
+      </a>
+      <a href="#" class="nav-item">
+        <img src="../assets/images/map_gym.svg" alt="Practice" class="nav-icon">
+        <span>Practice</span>
+      </a>
+      <a href="#" class="nav-item">
+        <img src="../assets/images/material-symbols-light_leaderboard-rounded.svg" alt="Leaderboard" class="nav-icon">
+        <span>Leaderboard</span>
+      </a>
 
-    <main class="quiz-main">
-      <!-- Breadcrumb Navigation - improved with aria attributes -->
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/index.html">Home</a>
-        <a href="/pages/practice.html">HTML</a>
-        <span aria-current="page">Basics Quiz</span>
-      </nav>
+    </aside>
 
-      <!-- Quiz Container - enhanced with better semantics -->
-      <section class="container quiz-container" aria-labelledby="quizTitle">
-        <h1 id="quizTitle" class="sr-only">HTML Basics Quiz</h1>
-        
-        <div class="progress-section">
-          <p id="progressText" aria-live="polite"></p>
-          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-            <div class="progress-fill" id="progressFill"></div>
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <header class="navbar">
+          <div class="nav-left">
+            <img src="../assets/images/Logo.png" alt="Logo" class="logo">
           </div>
-          <div class="question-number" id="questionNumber" aria-live="polite"></div>
-        </div>
+          <nav class="nav-links">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Lesson</a>
+          </nav>
+          <div class="user-profile">
+            <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
+            <div class="user-info">
+              <div class="user-greeting">Hi, Ezz</div>
+              <a href="#" class="edit-profile-link">
+                <span>Edit Profile</span>
+                <img src="../assets/images/Chevron right.svg" alt="Edit" width="15">
+              </a>
+            </div>
+          </div>
+          <div class="hamburger" id="hamburger">&#9776;</div>
+        </header>
 
-        <article class="question" id="questionText" aria-live="polite"></article>
-        
-        <form id="quizForm" class="answers" aria-labelledby="questionText">
-          <fieldset id="answerOptions" role="radiogroup">
-            <legend class="sr-only">Answer options</legend>
-            <!-- Answer options will be inserted here by JavaScript -->
-          </fieldset>
-        </form>
-        
-        <div class="message" id="message" role="alert" aria-live="assertive"></div>
+        <div class="quiz-main">
+          <h1>Simple Quiz</h1>
+          <div class="quiz">
+            <h2 id="question">Question goes here</h2>
+            <div class="quiz-header">
+              <div class="question-counter">Question 1 of 10</div>
+              <div class="progress-container">
+                <div class="progress-bar"></div>
+              </div>
+            </div>
+            <div class="answer-button">
+              <button title="answer1" class="option-button">answer 1</button>
+              <button title="answer2" class="option-button">answer 2</button>
+              <button title="answer3" class="option-button">answer 3</button>
+              <button title="answer4" class="option-button">answer 4</button>
+            </div>
+            <div  id="explanation">Explanation goes here</div>
+              <button id="next-btn" class="next-btn">Next</button>
 
-        <div class="buttons">
-          <button id="prevBtn" onclick="QuizApp.goPrevious()" disabled>Previous</button>
-          <button id="checkBtn" onclick="QuizApp.checkAnswer()">Check answer</button>
-          <button id="nextBtn" onclick="QuizApp.goNext()">Next</button>
-        </div>
 
-        <nav class="pagination" id="pagination" aria-label="Question navigation"></nav>
-
-        <section class="answer-section" id="answerSection" aria-labelledby="answerResult">
-          <h3 id="answerResult"></h3>
-          <p id="answerExplanation"></p>
-        </section>
-      </section>
-
-      <!-- Quiz Results Modal -->
-      <aside class="modal-overlay" id="resultsModal" role="dialog" aria-labelledby="resultsTitle">
-        <div class="modal-content">
-          <h2 id="resultsTitle">Quiz Completed!</h2>
-          <p id="resultsMessage"></p>
-          <div class="modal-actions">
-            <button id="retryQuiz">Try Again</button>
-            <button id="closeModal">Back to Lessons</button>
           </div>
         </div>
-      </aside>
     </main>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <section class="footer-social">
+        <div class="footer-logo">
+          <img class="footer-logo-img" src="../assets/images/logo 1.png" alt="Prolingo Logo">
+          <span class="logo">Prolingo</span>
+        </div>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-        <section class="footer-social">
-          <div class="footer-logo">
-            <img
-              class="footer-logo-img"
-              src="../assets/images/logo 1.png"
-              alt="Prolingo Logo"
-            />
-            <span class="logo">Prolingo</span>
-          </div>
-          <p class="footer-description">
-            Master programming languages through interactive lessons and quizzes.
-            Start your coding journey today with ProLingo!
-          </p>
-          <div class="social-icons">
-            <a href="#" class="social-icon" aria-label="Twitter"
-              ><i class="fa-brands fa-x-twitter"></i
-            ></a>
-            <a href="#" class="social-icon" aria-label="Facebook"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a href="#" class="social-icon" aria-label="Instagram"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="#" class="social-icon" aria-label="LinkedIn"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
+        <p class="footer-description">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma
+        </p>
+
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-x-twitter"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-instagram"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-linkedin-in"></i> </a>
+        </div>
+      </section>
+      <div class="footer-pages">
+        <section class="footer-section">
+          <h3>Product</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Features</a>
+            <a href="#" class="footer-link">Pricing</a>
+            <a href="#" class="footer-link">Case studies</a>
+            <a href="#" class="footer-link">Reviews</a>
+            <a href="#" class="footer-link">Updates</a>
           </div>
         </section>
-        <div class="footer-pages">
-          <section class="footer-section">
-            <h3>Product</h3>
-            <div class="footer-links">
-              <a href="/pages/features.html" class="footer-link">Features</a>
-              <a href="/pages/pricing.html" class="footer-link">Pricing</a>
-              <a href="/pages/case-studies.html" class="footer-link">Case studies</a>
-              <a href="/pages/reviews.html" class="footer-link">Reviews</a>
-              <a href="/pages/updates.html" class="footer-link">Updates</a>
-            </div>
-          </section>
-          <section class="footer-section">
-            <h3>Support</h3>
-            <div class="footer-links">
-              <a href="/pages/getting-started.html" class="footer-link">Getting started</a>
-              <a href="/pages/help-center.html" class="footer-link">Help center</a>
-              <a href="/pages/status.html" class="footer-link">Server status</a>
-              <a href="/pages/report-bug.html" class="footer-link">Report a bug</a>
-              <a href="/pages/support.html" class="footer-link">Chat support</a>
-            </div>
-          </section>
-          <section class="footer-section">
-            <h3>Downloads</h3>
-            <div class="footer-links">
-              <a href="#" class="footer-link">iOS</a>
-              <a href="#" class="footer-link">Android</a>
-              <a href="#" class="footer-link">Mac</a>
-              <a href="#" class="footer-link">Windows</a>
-              <a href="#" class="footer-link">Chrome</a>
-            </div>
-          </section>
-        </div>
+
+        <section class="footer-section">
+          <h3>Support</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Getting started</a>
+            <a href="#" class="footer-link">Help center</a>
+            <a href="#" class="footer-link">Server status</a>
+            <a href="#" class="footer-link">Report a bug</a>
+            <a href="#" class="footer-link">Chat support</a>
+          </div>
+        </section>
+
+        <section class="footer-section">
+          <h3>Downloads</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">iOS</a>
+            <a href="#" class="footer-link">Android</a>
+            <a href="#" class="footer-link">Mac</a>
+            <a href="#" class="footer-link">Windows</a>
+            <a href="#" class="footer-link">Chrome</a>
+          </div>
+        </section>
       </div>
-      <div class="copyright">
-        <p>
-          Copyright © 2025 Prolingo | All Rights Reserved |
-          <a href="/pages/terms.html" class="legal-link">Terms and Conditions</a> |
-          <a href="/pages/privacy.html" class="legal-link">Privacy Policy</a>
-        </p>
-      </div>
-    </footer>
+    </div>
 
-    <script>
-      // Module pattern for better organization
-      const QuizApp = (function() {
-        // Private variables
-        const state = {
-          quizData: [],
-          currentQuestion: 0,
-          userAnswers: [],
-          score: 0,
-          animationInProgress: false
-        };
+    <div class="copyright">
+      <p>
+        Copyright © 2025 Prolingo | All Rights Reserved |
+        <a href="#" class="legal-link">Terms and Conditions</a> |
+        <a href="#" class="legal-link">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
+  <!-- <script>
+    // const questions = 
 
-        // DOM Elements - centralized for easier reference
-        const elements = {
-          questionText: document.getElementById('questionText'),
-          answerOptions: document.getElementById('answerOptions'),
-          answerSection: document.getElementById('answerSection'),
-          answerResult: document.getElementById('answerResult'),
-          answerExplanation: document.getElementById('answerExplanation'),
-          message: document.getElementById('message'),
-          progressText: document.getElementById('progressText'),
-          progressFill: document.getElementById('progressFill'),
-          questionNumber: document.getElementById('questionNumber'),
-          pagination: document.getElementById('pagination'),
-          prevBtn: document.getElementById('prevBtn'),
-          nextBtn: document.getElementById('nextBtn'),
-          checkBtn: document.getElementById('checkBtn'),
-          resultsModal: document.getElementById('resultsModal'),
-          resultsTitle: document.getElementById('resultsTitle'),
-          resultsMessage: document.getElementById('resultsMessage'),
-          retryQuizBtn: document.getElementById('retryQuiz'),
-          closeModalBtn: document.getElementById('closeModal')
-        };
+    let current = 0;
 
-        // Utility Functions
-        function formatQuestionText(text) {
-          // Format code blocks and inline code
-          let formattedText = text.replace(/`([^`]+)`/g, "<code>$1</code>");
-          
-          // Format multi-line code blocks (between triple backticks)
-          formattedText = formattedText.replace(/```([^`]+)```/g, "<pre><code>$1</code></pre>");
-          
-          return formattedText;
-        }
-        
-        function updateButtonStates() {
-          elements.prevBtn.disabled = state.currentQuestion === 0;
-          elements.nextBtn.disabled = false;
-          
-          if (state.currentQuestion === state.quizData.length - 1) {
-            elements.nextBtn.textContent = 'Finish Quiz';
-          } else {
-            elements.nextBtn.textContent = 'Next';
-          }
-        }
+    function loadQuestion() {
+      const q = questions[current];
+      document.getElementById("question-container").innerHTML = `<div class="question">${q.question}</div>`;
+      const form = document.getElementById("answer-form");
+      form.innerHTML = "";
 
-        // Animation Functions
-        function animateElement(element, animationClass) {
-          return new Promise(resolve => {
-            element.classList.add(animationClass);
-            
-            function handleAnimationEnd() {
-              element.classList.remove(animationClass);
-              element.removeEventListener('animationend', handleAnimationEnd);
-              resolve();
-            }
-            
-            element.addEventListener('animationend', handleAnimationEnd);
-          });
-        }
+      q.options.forEach((opt, idx) => {
+        const id = `opt-${idx}`;
+        form.innerHTML += `
+          <label for="${id}">
+            <input type="radio" name="answer" value="${idx}" id="${id}" />
+            ${opt}
+          </label>
+        `;
+      });
 
-        // Core Quiz Functions
-        function loadQuiz() {
-          fetch("../html_quiz_questions.json")
-            .then(response => {
-              if (!response.ok) {
-                throw new Error('Network response was not ok');
-              }
-              return response.json();
-            })
-            .then(data => {
-              state.quizData = [...data];
-              state.userAnswers = new Array(state.quizData.length).fill(null);
-              loadQuestion();
-            })
-            .catch(error => {
-              console.error("Error loading quiz questions:", error);
-              elements.questionText.innerHTML = `
-                <h2>Error loading questions. Please try again later.</h2>
-                <p>${error.message}</p>
-              `;
-              elements.checkBtn.disabled = true;
-              elements.nextBtn.disabled = true;
-            });
-        }
-        
-        async function loadQuestion() {
-          if (state.quizData.length === 0) return;
-          
-          if (state.animationInProgress) return;
-          state.animationInProgress = true;
-          
-          // Add fade-out animation
-          await animateElement(elements.questionText, 'animate__fadeOut');
-          
-          const q = state.quizData[state.currentQuestion];
-          
-          // Update question text with formatted content
-          elements.questionText.innerHTML = `<h2>${formatQuestionText(q.question)}</h2>`;
-          
-          // Create answer options
-          let optionsHTML = '';
-          
-          if (q.type === "fill") {
-            optionsHTML = q.options.map((opt, idx) => `
-              <label>
-                <input type="radio" name="answer" value="${opt}" 
-                       ${state.userAnswers[state.currentQuestion] === opt ? 'checked' : ''} />
-                ${opt}
-              </label>
-            `).join("");
-          } else {
-            optionsHTML = q.options.map((opt, idx) => `
-              <label>
-                <input type="radio" name="answer" value="${idx}" 
-                       ${state.userAnswers[state.currentQuestion] === idx ? 'checked' : ''} />
-                ${opt}
-              </label>
-            `).join("");
-          }
-          
-          elements.answerOptions.innerHTML = optionsHTML;
-          elements.answerSection.style.display = "none";
-          elements.message.textContent = "";
-          
-          // Update progress indicators
-          elements.questionNumber.textContent = `Question ${state.currentQuestion + 1}`;
-          elements.progressText.textContent = `📄 ${state.currentQuestion + 1}/${state.quizData.length} Questions Completed (${Math.round(
-            ((state.currentQuestion + 1) / state.quizData.length) * 100
-          )}%)`;
-          
-          // Animate progress bar
-          const newWidth = `${((state.currentQuestion + 1) / state.quizData.length) * 100}%`;
-          elements.progressFill.style.width = newWidth;
-          
-          // Update pagination dots
-          const dots = state.quizData.map((_, i) => `
-            <span class="${i === state.currentQuestion ? 'active' : ''}" 
-                  onclick="QuizApp.goToQuestion(${i})"
-                  aria-label="Go to question ${i + 1}"></span>
-          `).join("");
-          elements.pagination.innerHTML = dots;
-          
-          // Update button states
-          updateButtonStates();
-          
-          // Add fade-in animation
-          await animateElement(elements.questionText, 'animate__fadeIn');
-          state.animationInProgress = false;
-          
-          // Add event listeners to radio buttons for keyboard accessibility
-          document.querySelectorAll('input[type="radio"]').forEach(radio => {
-            radio.addEventListener('keydown', (e) => {
-              if (e.key === 'Enter') {
-                e.target.checked = true;
-              }
-            });
-          });
-        }
-        
-        // Navigation Functions
-        function goToQuestion(index) {
-          if (index >= 0 && index < state.quizData.length) {
-            state.currentQuestion = index;
-            loadQuestion();
-          }
-        }
-        
-        function goPrevious() {
-          if (state.currentQuestion > 0) {
-            state.currentQuestion--;
-            loadQuestion();
-          }
-        }
-        
-        function goNext() {
-          if (state.currentQuestion < state.quizData.length - 1) {
-            state.currentQuestion++;
-            loadQuestion();
-          } else {
-            showResults();
-          }
-        }
-        
-        // Answer Checking and Validation
-        function checkAnswer() {
-          const selected = document.querySelector('input[name="answer"]:checked');
-          
-          if (!selected) {
-            elements.message.textContent = "Please select an answer first!";
-            elements.message.style.color = "var(--primary-color)";
-            // Add shake animation for error feedback
-            animateElement(elements.message, 'animate__shakeX');
-            return;
-          }
-          
-          const q = state.quizData[state.currentQuestion];
-          let isCorrect = false;
-          let correctAnswer = "";
-          
-          if (q.type === "fill") {
-            isCorrect = selected.value === q.correct;
-            correctAnswer = q.correct;
-          } else {
-            isCorrect = parseInt(selected.value) === q.correct;
-            correctAnswer = q.options[q.correct];
-          }
-          
-          // Store user answer
-          state.userAnswers[state.currentQuestion] = q.type === "fill" ? selected.value : parseInt(selected.value);
-          
-          // Update score if this is the first time answering correctly
-          if (isCorrect && state.userAnswers[state.currentQuestion] !== null) {
-            state.score++;
-          }
-          
-          // Show feedback
-          elements.answerResultEl.textContent = isCorrect 
-            ? "✅ Correct! Well done!" 
-            : "❌ Incorrect. The correct answer is:";
-            
-          elements.answerResult.style.color = isCorrect ? "var(--correct-answer)" : "var(--wrong-answer)";
-          
-          if (!isCorrect) {
-            elements.answerResult.innerHTML += ` <strong>${correctAnswer}</strong>`;
-          }
-          
-          elements.answerExplanation.textContent = q.explanation;
-          elements.answerSection.style.display = "block";
-          
-          // Animate the answer section appearance
-          animateElement(elements.answerSection, 'animate__fadeIn');
-          
-          // Scroll to feedback for better UX
-          elements.answerSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-        
-        // Results Modal
-        function showResults() {
-          const correctCount = calculateScore();
-          const percentage = Math.round((correctCount / state.quizData.length) * 100);
-          
-          elements.resultsTitle.textContent = "Quiz Completed!";
-          elements.resultsMessage.innerHTML = `
-            You scored <strong>${correctCount} out of ${state.quizData.length}</strong> 
-            (${percentage}%)<br><br>
-            ${getResultMessage(percentage)}
-          `;
-          
-          elements.resultsModal.classList.add('active');
-        }
-        
-        function calculateScore() {
-          let correctCount = 0;
-          
-          for (let i = 0; i < state.quizData.length; i++) {
-            const q = state.quizData[i];
-            const userAnswer = state.userAnswers[i];
-            
-            if (userAnswer !== null) {
-              if (q.type === "fill") {
-                if (userAnswer === q.correct) correctCount++;
-              } else {
-                if (userAnswer === q.correct) correctCount++;
-              }
-            }
-          }
-          
-          return correctCount;
-        }
-        
-        function getResultMessage(percentage) {
-          if (percentage >= 90) return "Excellent work! You've mastered these concepts!";
-          if (percentage >= 70) return "Great job! You have a good understanding.";
-          if (percentage >= 50) return "Not bad! Review the questions you missed to improve.";
-          return "Keep practicing! Review the lessons and try again.";
-        }
-        
-        function resetQuiz() {
-          state.currentQuestion = 0;
-          state.userAnswers = new Array(state.quizData.length).fill(null);
-          state.score = 0;
-          loadQuestion();
-          elements.resultsModal.classList.remove('active');
-        }
-        
-        // Event Handlers - Initialization
-        function init() {
-          // Add event listeners
-          elements.retryQuizBtn.addEventListener('click', resetQuiz);
-          elements.closeModalBtn.addEventListener('click', () => {
-            elements.resultsModal.classList.remove('active');
-            window.location.href = "/pages/lessons.html";
-          });
-          
-          // Keyboard Navigation
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft' && state.currentQuestion > 0) {
-              goPrevious();
-            } else if (e.key === 'ArrowRight' && state.currentQuestion < state.quizData.length - 1) {
-              goNext();
-            } else if (e.key === 'Enter') {
-              checkAnswer();
-            }
-          });
-          
-          // Load the quiz
-          loadQuiz();
-        }
-        
-        // Public API
-        return {
-          init,
-          goToQuestion,
-          goPrevious,
-          goNext,
-          checkAnswer,
-          resetQuiz
-        };
-      })();
-      
-      // Initialize the app when DOM is loaded
-      document.addEventListener('DOMContentLoaded', QuizApp.init);
+      document.getElementById("explanation").textContent = "";
+    }
 
-      // Add animation styles
-      const animationStyle = document.createElement('style');
-      animationStyle.textContent = `
-        .animate__fadeIn {
-          animation: fadeIn 0.5s ease forwards;
-        }
-        
-        .animate__fadeOut {
-          animation: fadeOut 0.3s ease forwards;
-        }
-        
-        .animate__shakeX {
-          animation: shakeX 0.8s cubic-bezier(.36,.07,.19,.97) both;
-        }
-        
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes fadeOut {
-          from { opacity: 1; transform: translateY(0); }
-          to { opacity: 0; transform: translateY(-10px); }
-        }
-        
-        @keyframes shakeX {
-          0%, 100% { transform: translateX(0); }
-          10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-          20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
-        
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0, 0, 0, 0);
-          white-space: nowrap;
-          border-width: 0;
-        }
-      `;
-      document.head.appendChild(animationStyle);
-    </script>
-  </body>
+    function nextQuestion() {
+      const form = document.getElementById("answer-form");
+      const selected = form.querySelector("input[name='answer']:checked");
+      if (!selected) return;
+
+      const answer = selected.value;
+      const q = questions[current];
+      let correct = false;
+
+      if (q.type === "fill") {
+        correct = q.options[answer] === q.correct;
+      } else {
+        correct = parseInt(answer) === q.correct;
+      }
+
+      document.getElementById("explanation").textContent = q.explanation;
+
+      if (current < questions.length - 1) {
+        current++;
+        setTimeout(loadQuestion, 1500);
+      } else {
+        setTimeout(() => {
+          document.querySelector(".quiz-container").innerHTML = `<h2>Quiz Finished</h2>`;
+        }, 1500);
+      }
+    }
+
+    window.onload = loadQuestion;
+  </script> -->
+</body>
+
 </html>
