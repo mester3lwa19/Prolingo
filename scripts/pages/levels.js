@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // In a real app, this would navigate to the lesson
         // alert(`Starting Level ${level.number}: ${level.title}`);
-        window.location.href = 'level.html';
+        window.location.href = '/Prolingo/level.html';
       });
 
       levelsGrid.appendChild(levelCard);
