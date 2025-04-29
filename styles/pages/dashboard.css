@@ -167,6 +167,7 @@
 
 .btn-primary {
   margin-top: 20px;
+  width: 200px;
 }
 
 @media (max-width: 1200px) {
