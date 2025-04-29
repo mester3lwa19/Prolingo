@@ -7,37 +7,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Form validation
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    e.preventDefault(); // block form submit first
     let isValid = true;
 
+    // validate email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(emailInput.value)) {
-      showError(
-        emailInput,
-        "emailError",
-        "Please enter a valid email address"
-      );
+    if (!emailRegex.test(emailInput.value.trim())) {
+      showError(emailInput, "emailError", "Please enter a valid email address");
       isValid = false;
     } else {
       hideError(emailInput, "emailError");
     }
 
-    if (passwordInput.value.length === 0) {
-      showError(
-        passwordInput,
-        "passwordError",
-        "Password is required"
-      );
+    // validate password
+    if (passwordInput.value.trim().length === 0) {
+      showError(passwordInput, "passwordError", "Password is required");
       isValid = false;
     } else {
       hideError(passwordInput, "passwordError");
     }
 
+    // only if valid, do success actions
     if (isValid) {
       form.style.display = "none";
       successMessage.style.display = "block";
+
       setTimeout(() => {
-        window.location.href = "/pages/dashboard.html";
+        window.location.href = "../pages/dashboard.html"; // correct path
       }, 2000);
     }
   });

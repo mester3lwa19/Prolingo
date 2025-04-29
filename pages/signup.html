@@ -12,9 +12,9 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="../styles/components/navbar.css">
-    <link rel="stylesheet" href="../styles/components/footer.css">
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/components/footer.css">
+    <link rel="stylesheet" href="../styles/components/navbar.css">
     <link rel="stylesheet" href="../styles/pages/signup.css">
     <script src="../scripts/main.js" defer></script>
     <script src="../scripts/pages/signup.js" defer></script>
@@ -23,27 +23,26 @@
 <body>
     <!-- Start Header -->
     <header class="navbar">
-        <div class="logo-container">
+
+        <a class="logo-container" href="/index.html">
             <img src="../assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
             <div class="logo-text">Prolingo</div>
-        </div>
+        </a>
         <nav class="nav-links">
-            <a class="nav-link" href="../index.html">Home</a>
-            <a class="nav-link" href="#">About</a>
-            <a class="nav-link" href="#">Contact</a>
-            <a href="../pages/login.html" class="btn-outline">Login</a>
-            <a href="../pages/signup.html" class="btn-primary">Get started</a>
+            <a class="nav-link" href="/index.html">Home</a>
+            <a class="nav-link" href="#contact">Contact</a> <!-- Placeholder -->
+            <a href="/pages/login.html" class="btn-outline">Login</a>
+            <a href="/pages/signup.html" class="btn-primary">Sign Up</a>
         </nav>
         <div class="hamburger" id="hamburger">&#9776;</div>
     </header>
 
     <aside class="sidebar" id="sidebar">
         <div class="close-btn" id="closeSidebar">&times;</div>
-        <a href="../index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="../pages/login.html">Login</a>
-        <a href="../pages/signup.html">Get started</a>
+        <a href="index.html">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="/pages/login.html">Login</a>
+        <a href="/pages/signup.html">Sign Up</a>
     </aside>
     <!-- End Header -->
     <div class="container">
@@ -57,7 +56,7 @@
                 </div>
 
                 <div class="success-message" id="successMessage">
-                    Account created successfully! Redirecting to dashboard...
+                    Account created successfully! Redirecting to Language Selection...
                 </div>
 
                 <form class="signup-form" id="signupForm">
@@ -184,7 +183,7 @@
             </p>
         </div>
     </footer>
-    
+
 </body>
 
 </html>

@@ -8,7 +8,7 @@
 
 body {
   font-family: var(--font-family);
-  background: var(--main-bg-color);
+  background-color: var(--main-bg-color);
   color: var(--white);
   font-size: var(--font-16);
   line-height: 1.5;
@@ -16,7 +16,7 @@ body {
 
 :root {
   /* Colors */
-  --main-bg-color: #254446;
+  --main-bg-color: #1A2F30;
   --black: #061617;
   --primary-color: #38c3cc;
   --secondary-color: #ffaf1a;
@@ -168,11 +168,13 @@ body {
   height: 100px;
   margin-top: 32px;
   overflow: hidden;
-  mask-image: linear-gradient(to right,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 20%,
-      rgba(0, 0, 0, 1) 80%,
-      rgba(0, 0, 0, 0));
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 20%,
+    rgba(0, 0, 0, 1) 80%,
+    rgba(0, 0, 0, 0)
+  );
 }
 
 .wrapper .logo_slider_item {
@@ -360,25 +362,79 @@ body {
   color: var(--white);
   font-size: var(--font-20);
 }
-
-.languages .language-cards {
-  width: 100%;
+.language-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+  width: 100%;
+}
+.language-card {
+  background: rgba(37, 68, 70, 0.7);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--text-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  min-height: 240px;
+  position: relative;
+  overflow: hidden;
 }
 
-.languages .language-cards .language-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 16px;
-  color: var(--white);
-  text-align: center;
-  margin: 24px;
-  font-size: var(--font-25);
-  font-weight: var(--font-weight-medium);
+.language-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 177, 188, 0.1) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.language-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 253, 255, 0.1);
+  border-color: var(--primary-color);
+}
+
+.language-card:hover::before {
+  opacity: 1;
+}
+
+.language-card.selected {
+  border-color: var(--primary-color);
+  background-color: rgba(0, 177, 188, 0.1);
+  box-shadow: 0 0 16px rgba(0, 253, 255, 0.2);
+}
+
+.language-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.language-card:hover img {
+  transform: scale(1.1);
+}
+
+.language-card span {
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 /* End languages */
@@ -453,7 +509,6 @@ body {
 
 /* Responsive adjustments (simplified) */
 @media (max-width: 768px) {
-
   /* md breakpoint, converted to pixels */
   .container {
     padding-left: 32px;
@@ -499,9 +554,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg,
-      rgba(0, 177, 188, 0.1) 0%,
-      transparent 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 177, 188, 0.1) 0%,
+    transparent 100%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
 }

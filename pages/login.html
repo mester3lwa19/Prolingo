@@ -11,38 +11,35 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles/components/footer.css">
     <link rel="stylesheet" href="../styles/components/navbar.css">
-    <link rel="stylesheet" href="../styles/pages/signin.css">
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/pages/login.css">
     <script src="../scripts/main.js" defer></script>
-    <script src="../scripts/pages/signin.js" defer></script>
+    <script src="../scripts/pages/login.js" defer></script>
 </head>
 
 <body>
     <!-- Start Header -->
     <header class="navbar">
-        <div class="logo-container">
+
+        <a class="logo-container" href="/index.html">
             <img src="../assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
             <div class="logo-text">Prolingo</div>
-        </div>
+        </a>
         <nav class="nav-links">
-            <a class="nav-link" href="../index.html">Home</a>
-            <a class="nav-link" href="#">About</a>
-            <a class="nav-link" href="#">Contact</a>
-            <a href="../pages/login.html" class="btn-outline">Login</a>
-            <a href="../pages/signup.html" class="btn-primary">Get started</a>
-        </nav> <!-- ...inside <head>... -->
-        <link rel="stylesheet" href="/styles/pages/login.css">
-        <script src="../scripts/pages/login.js" defer></script>
+            <a class="nav-link" href="/index.html">Home</a>
+            <a class="nav-link" href="#contact">Contact</a> <!-- Placeholder -->
+            <a href="/pages/login.html" class="btn-outline">Login</a>
+            <a href="/pages/signup.html" class="btn-primary">Sign Up</a>
+        </nav>
         <div class="hamburger" id="hamburger">&#9776;</div>
     </header>
 
     <aside class="sidebar" id="sidebar">
         <div class="close-btn" id="closeSidebar">&times;</div>
-        <a href="../pages/dashboard.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="../pages/login.html">Login</a>
-        <a href="../pages/signup.html">Get started</a>
+        <a href="index.html">Home</a>
+        <a href="#contact">Contact</a>
+        <a href="/pages/login.html">Login</a>
+        <a href="/pages/signup.html">Sign Up</a>
     </aside>
     <!-- End Header -->
     <div class="container">
@@ -61,7 +58,7 @@
                 <form class="signin-form" id="signinForm">
                     <div class="form-group">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-input" placeholder="example@email.com" required>
+                        <input type="email" id="email" class="form-input" placeholder="example@email.com" >
                         <div class="error-message" id="emailError">Please enter a valid email address</div>
                     </div>
 
@@ -71,7 +68,7 @@
                             <span class="password-icon lock-icon">
                                 <i class="fa-solid fa-lock"></i> </span>
                             <input type="password" id="password" class="password-input"
-                                placeholder="Enter your password" required>
+                                placeholder="Enter your password" >
                         </div>
                         <div class="error-message" id="passwordError">Password is required</div>
                     </div>
@@ -84,7 +81,7 @@
                         <a href="#" class="forgot-password">Forgot password?</a>
                     </div>
 
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-bottom: 16px;">Sign In</button>
+                    <button type="submit" class="btn-primary" style="width: 100%; margin-bottom: 16px;">Login</button>
 
                     <div class="divider">
                         <div class="divider-line"></div>
@@ -93,11 +90,11 @@
                     </div>
 
                     <button type="button" class="social-signin-btn" id="googleSignIn">
-                        <i class="fa-brands fa-google"></i> Sign In with Google
+                        <i class="fa-brands fa-google"></i> Login with Google
                     </button>
 
                     <button type="button" class="social-signin-btn" id="facebookSignIn">
-                        <i class="fa-brands fa-facebook-f"></i> Sign In with Facebook
+                        <i class="fa-brands fa-facebook-f"></i> Login with Facebook
                     </button>
 
                     <p class="signup-link">Don't have an account? <a href="/signup.html">Sign up</a></p>

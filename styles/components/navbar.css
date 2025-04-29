@@ -3,12 +3,19 @@ header.navbar {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 9999;
 }
 
 .logo-container {
   display: flex;
   align-items: center;
   gap: 4px;
+  text-decoration: none;
+  color: var(--white-color);
+  transition: all 0.3s ease-in-out;
 }
 
 .logo-img {

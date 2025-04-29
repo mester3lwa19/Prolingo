@@ -21,16 +21,15 @@
     <!-- Start Header -->
     <header class="navbar">
 
-        <div class="logo-container">
+        <a class="logo-container" href="index.html">
             <img src="./assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
             <div class="logo-text">Prolingo</div>
-        </div>
+        </a>
         <nav class="nav-links">
             <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="#about">About</a> <!-- Placeholder -->
             <a class="nav-link" href="#contact">Contact</a> <!-- Placeholder -->
             <a href="/pages/login.html" class="btn-outline">Login</a>
-            <a href="/pages/signup.html" class="btn-primary">Get started</a>
+            <a href="/pages/signup.html" class="btn-primary">Sign Up</a>
         </nav>
         <div class="hamburger" id="hamburger">&#9776;</div>
     </header>
@@ -38,10 +37,9 @@
     <aside class="sidebar" id="sidebar">
         <div class="close-btn" id="closeSidebar">&times;</div>
         <a href="index.html">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#contact">Contact</a>
         <a href="/pages/login.html">Login</a>
-        <a href="/pages/signup.html">Get started</a>
+        <a href="/pages/signup.html">Sign Up</a>
     </aside>
     <!-- End Header -->
 
@@ -157,7 +155,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-primary">Sign Up</button>
+                <button type="submit" class="btn-primary">Get Started</button>
             </form>
 
         </div>
@@ -410,7 +408,7 @@
     <!--End Testimonials-->
 
     <!--Start Contact us-->
-    <section class="contact-us">
+    <section class="contact-us" id="contact">
         <div class="container">
             <h2>Contact Us</h2>
             <p class="description">Have questions? We're here to help!</p>
@@ -433,12 +431,13 @@
                     </div>
 
                 </div>
-                <button type="submit" class="btn-primary">Sign Up</button>
+                <button type="submit" class="btn-primary">Send</button>
             </form>
 
         </div>
     </section>
     <!--End Contact us-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!--Start Footer-->
     <footer>
         <div class="footer-content">
