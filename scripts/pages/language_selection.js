@@ -188,9 +188,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Redirect after a short delay
     setTimeout(() => {
-      // window.location.href = "../pages/dashboard.html";
-      console.log("Would redirect to dashboard");
-    }, 2000);
+      window.location.href = "../pages/dashboard.html";
+      // console.log("Would redirect to dashboard");
+    }, 500);
   });
 
   // Helper functions for form validation

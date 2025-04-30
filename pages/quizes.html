@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prolingo - Practice</title>
+    <title>Prolingo - Quiz</title>
     <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/pages/practice.css">
+    <link rel="stylesheet" href="../styles/pages/levels.css">
     <link rel="stylesheet" href="../styles/components/footer.css">
     <link rel="stylesheet" href="../styles/components/dashobardNavbar.css">
-    <script src="../scripts/pages/practice.js" defer></script>
+    <script src="../scripts/pages/quizes.js" defer></script>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                 <img src="../assets/images/dashicons_welcome-learn-more.svg" alt="Learn" class="nav-icon">
                 <span>Learn</span>
             </a>
-            <a href="../pages/practice.html" class="nav-item active">
+            <a href="../pages/practice.html" class="nav-item">
                 <img src="../assets/images/map_gym.svg" alt="Practice" class="nav-icon">
                 <span>Practice</span>
             </a>
@@ -46,7 +46,7 @@
                     class="nav-icon">
                 <span>Leaderboard</span>
             </a>
-            <a href="../pages/quizes.html" class="nav-item ">
+            <a href="../pages/quizes.html" class="nav-item active">
                 <img src="../assets/images/material-symbols_quiz-rounded.svg" alt="Leaderboard" class="nav-icon">
                 <span>Quizzes</span>
             </a>
@@ -71,67 +71,24 @@
                     </div>
                     <div class="hamburger" id="hamburger">&#9776;</div>
                 </header>
-                <!--heading-->
-                <div class="heading">
-                    <p>
-                        This is your practice area try writing your own HTML code below and see
-                        the result in real-time!
-                    </p>
-                </div>
-                <!--coding section-->
-                <section class="coding-area">
-                    <div class="input">
-                        <textarea id="codeInput" placeholder="Enter your code here to get the output"
-                            class="text-area"></textarea>
+
+                <section class="levels-section">
+                    <div class="section-header">
+                        <h1 class="section-title">Programming Quizzes</h1>
+                        <p class="section-subtitle">Master web development through our structured learning path</p>
                     </div>
-                    <div class="output">
-                        <div class="browser">
-                            <div class="controls">
-                                <div class="browser-control">
-                                    <img src="../assets/images/Browser Controls.svg" alt="browser-controls" />
-                                    <div class="tab-and-plus">
-                                        <div class="tab">
-                                            <img src="../assets/images/Curve L.svg" alt="curve-l" />
-                                            <div class="favicon-text-icon">
-                                                <img src="../assets/images/google-icon.svg" alt="google" />
-                                                <p>Google</p>
-                                                <img src="../assets/images/Icon - Close.svg" alt="close" />
-                                            </div>
-                                            <img src="../assets/images/Curve R.svg" alt="curve-r" />
-                                        </div>
-                                        <img src="../assets/images/Icon - Plus.svg" alt="+" />
-                                    </div>
-                                </div>
-                                <div class="url-control">
-                                    <div class="left-locked-icons">
-                                        <img src="../assets/images/Icon - Back.svg" alt="back" />
-                                        <img src="../assets/images/Icon - Forward.svg" alt="forward" />
-                                        <img src="../assets/images/Icon - Refresh.svg" alt="refresh" />
-                                        <img src="../assets/images/Icon - Home.svg" alt="home" />
-                                    </div>
-                                    <div class="url-bar">
-                                        <div class="url-bar-left">
-                                            <img src="../assets/images/Icon - Secure.svg" alt="" />
-                                            <p>index.html</p>
-                                        </div>
-                                        <div class="url-bar-right">
-                                            <img src="../assets/images/Icon - Favorite.svg" alt="" />
-                                        </div>
-                                    </div>
-                                    <div class="right-locked-icons">
-                                        <img src="../assets/images/Image - User Profile.svg" alt=""
-                                            style="border-radius: 22px" />
-                                        <img src="../assets/images/Icon - More.svg" alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="browser-output">
-                                <iframe id="outputFrame" class="browser-output-iframe"></iframe>
-                            </div>
-                        </div>
+
+                    <div class="filter-controls">
+                        <button class="filter-btn active" data-category="all">All Levels</button>
+                        <button class="filter-btn" data-category="html">HTML</button>
+                        <button class="filter-btn" data-category="css">CSS</button>
+                        <button class="filter-btn" data-category="javascript">JavaScript</button>
+                    </div>
+
+                    <div class="levels-grid" id="levelsGrid">
+                        <!-- Level cards will be populated by JavaScript -->
                     </div>
                 </section>
-
             </div>
         </main>
     </div>

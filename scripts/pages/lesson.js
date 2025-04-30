@@ -1,97 +1,3 @@
-// const questions = [
-//   {
-//     contentType: "question",
-//     type: "truefalse",
-//     question: "All HTML tags must have a closing tag.",
-//     options: ["True", "False"],
-//     correct: 1,
-//     explanation: "False — some tags like br and img are self-closing.",
-//   },
-//   {
-//     contentType: "question",
-//     type: "multiple",
-//     question:
-//       'Complete the code to open a link in a new tab: a href="https://prolingo.com" ______Visit Prolingo!',
-//     options: ["newtab", 'target="_blank"', 'open="new"', 'window="new"'],
-//     correct: 1,
-//     explanation: 'target="_blank" opens the link in a new browser tab.',
-//   },
-//   {
-//     contentType: "question",
-//     type: "multiple",
-//     question: "What is the correct HTML element for inserting a line break?",
-//     options: ["lb", "break", "br", "newline"],
-//     correct: 2,
-//     explanation: "br is the correct HTML tag for a line break.",
-//   },
-//   {
-//     contentType: "question",
-//     type: "fill",
-//     question: "The ______ attribute in the img tag specifies the image path.",
-//     options: ["href", "src", "link", "url"],
-//     correct: 1,
-//     explanation: "The src attribute is used to specify the image path.",
-//   },
-//   {
-//     contentType: "question",
-//     type: "truefalse",
-//     question:
-//       'HTML stands for "HyperText Markup Language" and is a programming language.',
-//     options: ["True", "False"],
-//     correct: 1,
-//     explanation:
-//       "False — HTML is a markup language, not a programming language.",
-//   },
-//   {
-//     contentType: "explanation",
-//     explanation: "ul tag defines an unordered list.",
-//   },
-//   {
-//     contentType: "question",
-//     type: "multiple",
-//     question: "Which tag defines an unordered list?",
-//     options: ["ol", "ul", "li", "list"],
-//     correct: 1,
-//     explanation: "ul is used to define an unordered list.",
-//   },
-//   {
-//     contentType: "coding",
-//     explanation:
-//       "Try writing a simple HTML code snippet that includes an unordered list with 2 li elements that have item 1 in first and item 2 in second.",
-//   },
-//   {
-//     contentType: "question",
-//     type: "fill",
-//     question: "The ______ tag is used for the main heading (largest size).",
-//     options: ["h6", "head", "h1", "header"],
-//     correct: 2,
-//     explanation: "h1 is the largest heading tag in HTML.",
-//   },
-//   {
-//     contentType: "question",
-//     type: "truefalse",
-//     question: "The meta tag belongs inside the body section.",
-//     options: ["True", "False"],
-//     correct: 1,
-//     explanation: "False — the meta tag should be placed in the head section.",
-//   },
-//   {
-//     contentType: "question",
-//     type: "multiple",
-//     question: "Which tag creates a hyperlink?",
-//     options: ["link", "a", "href", "hyperlink"],
-//     correct: 1,
-//     explanation: "&lt;a&gt; is the anchor tag used to create hyperlinks.",
-//   },
-//   {
-//     contentType: "question",
-//     type: "fill",
-//     question: "To make text bold, use the ______ tag.",
-//     options: ["strong or b", "bold ", "em", "big"],
-//     correct: 0,
-//     explanation: "Both strong and b can be used to make text bold.",
-//   },
-// ];
 // DOM elements
 const questions = [
   {
@@ -350,12 +256,13 @@ function loadQuestion() {
       answerButtons.appendChild(button);
       nextBtn.style.display = "block";
     });
-  } else if (currentQuestion.contentType === "truefalse") {
+  } else if (
+    currentQuestion.contentType === "question" &&
+    currentQuestion.type === "truefalse"
+  ) {
     nextBtn.disabled = true;
-
     questionElement.classList.remove("pure_explanation");
     coding_area[0].style.display = "none";
-
     questionElement.textContent = currentQuestion.question;
     currentQuestion.options.forEach((option, index) => {
       const button = document.createElement("button");
@@ -378,16 +285,12 @@ function loadQuestion() {
     if (codeInput && outputFrame) {
       // Listen for changes in the textarea
       codeInput.addEventListener("input", () => {
-        const userCode = codeInput.value;
-
-        // Get iframe document
-        const iframeDoc =
+        const code = codeInput.value;
+        const iframeDocument =
           outputFrame.contentDocument || outputFrame.contentWindow.document;
-
-        // Write user's HTML into the iframe
-        iframeDoc.open();
-        iframeDoc.write(userCode);
-        iframeDoc.close();
+        iframeDocument.open();
+        iframeDocument.write(code);
+        iframeDocument.close();
       });
     } else {
       console.warn("Could not find codeInput or outputFrame element.");
@@ -419,6 +322,7 @@ function resetState() {
   while (answerButtons.firstChild) {
     answerButtons.removeChild(answerButtons.firstChild);
   }
+  explanationElement.textContent = "";
 }
 
 function selectAnswer(e) {

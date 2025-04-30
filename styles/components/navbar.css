@@ -48,6 +48,10 @@ header.navbar {
   position: relative;
   line-height: 18px;
 }
+.nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
 
 .nav-link:hover {
   color: var(--primary-color);

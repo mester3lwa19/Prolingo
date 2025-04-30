@@ -22,7 +22,10 @@ header {
   position: relative;
   line-height: 18px;
 }
-
+.nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
 .nav-link:hover {
   color: var(--primary-color);
 }
@@ -104,14 +107,17 @@ header {
   gap: 8px;
   font-size: 25px;
   font-weight: 500;
-  color: var(--primary-color);
+  color: #e1e1e1;
   cursor: pointer;
   padding: 8px 0;
   transition: all 0.3s ease;
   text-decoration: none;
   position: relative;
 }
-
+.nav-item.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
 .nav-item:hover {
   color: #fff;
   transform: translateX(5px);

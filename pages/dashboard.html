@@ -24,16 +24,16 @@
     <div class="app-container">
         <!-- Sidebar -->
         <aside class="sidebar" id="sidebar">
-            <a class="logo-container" href="index.html">
+            <a class="logo-container" href="./dashboard.html">
                 <img src="../assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
                 <div class="logo-text">Prolingo</div>
             </a>
-            <div class="user-profile">
+            <a class="user-profile" href="./dashboard.html">
                 <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
                 <div class="user-info">
                     <div class="user-greeting">Hi, Ezz</div>
                 </div>
-            </div>
+            </a>
             <!-- Sidebar Links -->
             <a href="../pages/levels.html" class="nav-item">
                 <img src="../assets/images/dashicons_welcome-learn-more.svg" alt="Learn" class="nav-icon">
@@ -48,18 +48,21 @@
                     class="nav-icon">
                 <span>Leaderboard</span>
             </a>
-
+            <a href="../pages/quizes.html" class="nav-item ">
+                <img src="../assets/images/material-symbols_quiz-rounded.svg" alt="Leaderboard" class="nav-icon">
+                <span>Quizzes</span>
+            </a>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
             <div class="content-wrapper">
                 <header class="navbar">
-                    <div class="nav-left">
+                    <a class="nav-left" href="./dashboard.html">
                         <img src="../assets/images/Logo.png" alt="Logo" class="logo">
-                    </div>
+                    </a>
                     <nav class="nav-links">
-                        <a class="nav-link" href="../pages/dashboard.html">Home</a>
+                        <a class="nav-link active" href="../pages/dashboard.html">Home</a>
                         <a class="nav-link" href="../pages/levels.html">Lesson</a>
                     </nav>
                     <div class="user-profile">
