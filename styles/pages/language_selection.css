@@ -15,15 +15,18 @@
   padding: 40px 20px;
   animation: fadeIn 1s ease-out;
 }
+
 .user-profile {
   display: flex;
   align-items: center;
 }
+
 .user-info {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .skill-level,
 .language-choices {
   margin-bottom: 60px;
@@ -79,7 +82,7 @@
   transition: color 0.3s ease;
 }
 
-.radio-option input[type="radio"]:checked + label {
+.radio-option input[type="radio"]:checked+label {
   color: var(--primary-color);
   font-weight: 500;
 }
@@ -117,11 +120,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 177, 188, 0.1) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(0, 177, 188, 0.1) 0%,
+      transparent 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }

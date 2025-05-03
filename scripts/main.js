@@ -54,5 +54,6 @@ window.addEventListener("scroll", () => {
   } else {
     navBar.style.backgroundColor = "transparent";
     navBar.style.borderBottom = "none";
-    navBar.style.boxShadow = "none";}
+    navBar.style.boxShadow = "none";
+  }
 });

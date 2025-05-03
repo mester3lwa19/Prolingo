@@ -138,16 +138,14 @@ document.addEventListener("DOMContentLoaded", function () {
       levelCard.innerHTML = `
                   <div class="level-header">
                       <div class="level-number">${level.number}</div>
-                      <img src="${level.icon}" alt="${
-        level.category
-      }" class="level-icon">
+                      <img src="${level.icon}" alt="${level.category
+        }" class="level-icon">
                   </div>
                   <div class="level-category">${level.category.toUpperCase()}</div>
                   <div class="level-title">${level.title}</div>
                   <div class="level-progress">
-                      <div class="level-progress-bar" style="width: ${
-                        level.progress
-                      }%"></div>
+                      <div class="level-progress-bar" style="width: ${level.progress
+        }%"></div>
                   </div>
               `;
 

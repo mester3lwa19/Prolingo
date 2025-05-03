@@ -20,6 +20,7 @@
   margin: 0 auto;
   width: 100%;
 }
+
 /* Quiz styles */
 .quiz-main {
   display: flex;
@@ -33,6 +34,7 @@
   /* border-radius: 8px; */
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
+
 .quiz-main h1 {
   font-size: 36px;
   font-weight: bold;
@@ -40,6 +42,7 @@
   margin-bottom: 20px;
   text-align: center;
 }
+
 .quiz-main .quiz {
   display: flex;
   flex-direction: column;
@@ -49,6 +52,7 @@
   padding: 20px;
   border-radius: 8px;
 }
+
 .quiz-main .quiz .explanation {
   width: 100%;
   border-radius: 8px;
@@ -60,6 +64,7 @@
   color: var(--main-bg-color);
   animation: fadeIn 0.5s ease-in-out;
 }
+
 .quiz-main .quiz #question {
   font-size: 24px;
   font-weight: bold;
@@ -67,6 +72,7 @@
   color: var(--white) !important;
   animation: fadeIn 0.5s ease-in-out;
 }
+
 .quiz-main .quiz .answer-button {
   gap: 20px;
   display: flex;
@@ -75,6 +81,7 @@
   width: 100%;
   animation: fadeIn 0.5s ease-in-out;
 }
+
 .quiz-main .quiz .answer-button .option-button {
   width: 100%;
   padding: 16px;
@@ -83,20 +90,23 @@
   font-weight: bold;
   color: #fff;
   background-color: transparent;
-  border: var(--white) 2px solid ;
-  
+  border: var(--white) 2px solid;
+
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .correct {
   background-color: green !important;
   color: white !important;
 }
+
 .incorrect {
   background-color: red !important;
   color: white !important;
 }
+
 .next-btn {
   width: 250px;
   padding: 10px;
@@ -111,6 +121,7 @@
   animation: fadeIn 0.5s ease-in-out;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 .restart-btn {
   width: 250px;
   padding: 10px;
@@ -125,6 +136,7 @@
   animation: fadeIn 0.5s ease-in-out;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;

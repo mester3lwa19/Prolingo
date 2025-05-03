@@ -2,154 +2,153 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prolingo - Leaderboard</title>
-    <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/pages/leaderboard.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/components/footer.css">
-    <link rel="stylesheet" href="../styles/components/dashobardNavbar.css">
-    <script src="../scripts/pages/leaderboard.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prolingo - Leaderboard</title>
+  <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../styles/pages/leaderboard.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/components/footer.css">
+  <link rel="stylesheet" href="../styles/components/dashobardNavbar.css">
+  <script src="../scripts/pages/leaderboard.js" defer></script>
 </head>
 
 <body>
 
-    <!-- Mobile menu toggle -->
-    <!-- <button class="menu-toggle" id="menuToggle">☰</button> -->
+  <!-- Mobile menu toggle -->
+  <!-- <button class="menu-toggle" id="menuToggle">☰</button> -->
 
-    <div class="app-container">
-        <!-- Sidebar -->
-        <aside class="sidebar" id="sidebar">
-            <a class="logo-container" href="./dashboard.html">
-                <img src="..//assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
-                <div class="logo-text">Prolingo</div>
-            </a>
-            <div class="user-profile">
-                <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
-                <div class="user-info">
-                    <div class="user-greeting">Hi, Ezz</div>
-                </div>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <a class="logo-container" href="./dashboard.html">
+        <img src="..//assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
+        <div class="logo-text">Prolingo</div>
+      </a>
+      <div class="user-profile">
+        <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
+        <div class="user-info">
+          <div class="user-greeting">Hi, Ezz</div>
+        </div>
+      </div>
+      <a href="../pages/levels.html" class="nav-item">
+        <img src="../assets/images/dashicons_welcome-learn-more.svg" alt="Learn" class="nav-icon">
+        <span>Learn</span>
+      </a>
+      <a href="../pages/practice.html" class="nav-item">
+        <img src="../assets/images/map_gym.svg" alt="Practice" class="nav-icon">
+        <span>Practice</span>
+      </a>
+      <a href="../pages/leaderboard.html" class="nav-item active">
+        <img src="../assets/images/material-symbols-light_leaderboard-rounded.svg" alt="Leaderboard" class="nav-icon">
+        <span>Leaderboard</span>
+      </a>
+      <aside href="../pages/quizes.html" class="nav-item ">
+        <img src="../assets/images/material-symbols_quiz-rounded.svg" alt="Leaderboard" class="nav-icon">
+        <span>Quizzes</span>
+      </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-wrapper">
+        <header class="navbar">
+          <a class="nav-left" href="./dashboard.html">
+            <img src="../assets/images/Logo.png" alt="Logo" class="logo">
+          </a>
+          <nav class="nav-links">
+            <a class="nav-link" href="../pages/dashboard.html">Home</a>
+            <a class="nav-link" href="../pages/levels.html">Lesson</a>
+          </nav>
+          <div class="user-profile">
+            <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
+            <div class="user-info">
+              <div class="user-greeting">Hi, Ezz</div>
             </div>
-            <a href="../pages/levels.html" class="nav-item">
-                <img src="../assets/images/dashicons_welcome-learn-more.svg" alt="Learn" class="nav-icon">
-                <span>Learn</span>
-            </a>
-            <a href="../pages/practice.html" class="nav-item">
-                <img src="../assets/images/map_gym.svg" alt="Practice" class="nav-icon">
-                <span>Practice</span>
-            </a>
-            <a href="../pages/leaderboard.html" class="nav-item active">
-                <img src="../assets/images/material-symbols-light_leaderboard-rounded.svg" alt="Leaderboard"
-                    class="nav-icon">
-                <span>Leaderboard</span>
-            </a>
-            <a href="../pages/quizes.html" class="nav-item ">
-                <img src="../assets/images/material-symbols_quiz-rounded.svg" alt="Leaderboard" class="nav-icon">
-                <span>Quizzes</span>
-            </a>
-        </aside>
+          </div>
+          <div class="hamburger" id="hamburger">&#9776;</div>
+        </header>
 
-        <!-- Main Content -->
-        <main class="main-content">
-            <div class="content-wrapper">
-                <header class="navbar">
-                    <a class="nav-left" href="./dashboard.html">
-                        <img src="../assets/images/Logo.png" alt="Logo" class="logo">
-                    </a>
-                    <nav class="nav-links">
-                        <a class="nav-link" href="../pages/dashboard.html">Home</a>
-                        <a class="nav-link" href="../pages/levels.html">Lesson</a>
-                    </nav>
-                    <div class="user-profile">
-                        <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
-                        <div class="user-info">
-                            <div class="user-greeting">Hi, Ezz</div>
-                        </div>
-                    </div>
-                    <div class="hamburger" id="hamburger">&#9776;</div>
-                </header>
+        <section class="leaderboard-section">
+          <label for="leaderboard" class="title">Leaderboard</label>
+          <div class="lead-container">
 
-                <section class="leaderboard-section">
-                    <label for="leaderboard" class="title">Leaderboard</label>
-                    <div class="lead-container">
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
 
-                    </div>
-                </section>
-            </div>
-        </main>
+  <footer>
+    <div class="footer-content">
+      <section class="footer-social">
+        <div class="footer-logo">
+          <img class="footer-logo-img" src="../assets/images/logo 1.png" alt="Prolingo Logo">
+          <span class="logo">Prolingo</span>
+        </div>
+
+        <p class="footer-description">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma
+        </p>
+
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-x-twitter"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-instagram"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-linkedin-in"></i> </a>
+        </div>
+      </section>
+      <div class="footer-pages">
+        <section class="footer-section">
+          <h3>Product</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Features</a>
+            <a href="#" class="footer-link">Pricing</a>
+            <a href="#" class="footer-link">Case studies</a>
+            <a href="#" class="footer-link">Reviews</a>
+            <a href="#" class="footer-link">Updates</a>
+          </div>
+        </section>
+
+        <section class="footer-section">
+          <h3>Support</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Getting started</a>
+            <a href="#" class="footer-link">Help center</a>
+            <a href="#" class="footer-link">Server status</a>
+            <a href="#" class="footer-link">Report a bug</a>
+            <a href="#" class="footer-link">Chat support</a>
+          </div>
+        </section>
+
+        <section class="footer-section">
+          <h3>Downloads</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">iOS</a>
+            <a href="#" class="footer-link">Android</a>
+            <a href="#" class="footer-link">Mac</a>
+            <a href="#" class="footer-link">Windows</a>
+            <a href="#" class="footer-link">Chrome</a>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <section class="footer-social">
-                <div class="footer-logo">
-                    <img class="footer-logo-img" src="../assets/images/logo 1.png" alt="Prolingo Logo">
-                    <span class="logo">Prolingo</span>
-                </div>
-
-                <p class="footer-description">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma
-                </p>
-
-                <div class="social-icons">
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-x-twitter"></i> </a>
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-facebook-f"></i> </a>
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-instagram"></i> </a>
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-linkedin-in"></i> </a>
-                </div>
-            </section>
-            <div class="footer-pages">
-                <section class="footer-section">
-                    <h3>Product</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">Features</a>
-                        <a href="#" class="footer-link">Pricing</a>
-                        <a href="#" class="footer-link">Case studies</a>
-                        <a href="#" class="footer-link">Reviews</a>
-                        <a href="#" class="footer-link">Updates</a>
-                    </div>
-                </section>
-
-                <section class="footer-section">
-                    <h3>Support</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">Getting started</a>
-                        <a href="#" class="footer-link">Help center</a>
-                        <a href="#" class="footer-link">Server status</a>
-                        <a href="#" class="footer-link">Report a bug</a>
-                        <a href="#" class="footer-link">Chat support</a>
-                    </div>
-                </section>
-
-                <section class="footer-section">
-                    <h3>Downloads</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">iOS</a>
-                        <a href="#" class="footer-link">Android</a>
-                        <a href="#" class="footer-link">Mac</a>
-                        <a href="#" class="footer-link">Windows</a>
-                        <a href="#" class="footer-link">Chrome</a>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <p>
-                Copyright © 2025 Prolingo | All Rights Reserved |
-                <a href="#" class="legal-link">Terms and Conditions</a> |
-                <a href="#" class="legal-link">Privacy Policy</a>
-            </p>
-        </div>
-    </footer>
+    <div class="copyright">
+      <p>
+        Copyright © 2025 Prolingo | All Rights Reserved |
+        <a href="#" class="legal-link">Terms and Conditions</a> |
+        <a href="#" class="legal-link">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
 
 </body>
 

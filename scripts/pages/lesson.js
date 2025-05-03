@@ -303,9 +303,8 @@ function loadQuestion() {
 
 function updateProgress() {
   // Update question counter text
-  questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${
-    questions.length
-  }`;
+  questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length
+    }`;
 
   // Update progress bar width
   const progressPercentage =

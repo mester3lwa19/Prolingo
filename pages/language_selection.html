@@ -2,179 +2,178 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prolingo - Language Selection</title>
-    <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/components/navbar.css">
-    <link rel="stylesheet" href="../styles/components/footer.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/pages/language_selection.css">
-    <script src="../scripts/main.js" defer></script>
-    <script src="../scripts/pages/language_selection.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prolingo - Language Selection</title>
+  <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../styles/components/navbar.css">
+  <link rel="stylesheet" href="../styles/components/footer.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/pages/language_selection.css">
+  <script src="../scripts/main.js" defer></script>
+  <script src="../scripts/pages/language_selection.js" defer></script>
 </head>
 
 <body>
-    <!-- Header with Navigation  -->
-    <header class="navbar">
+  <!-- Header with Navigation  -->
+  <header class="navbar">
 
-        <a class="logo-container" href="./dashboard.html">
-            <img src="../assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
-            <div class="logo-text">Prolingo</div>
-        </a>
-        <nav class="nav-links">
-            <a class="nav-link" href="../pages/dashboard.html">Home</a>
-            <a class="nav-link" href="../pages/levels.html">Lesson</a>
-            <div class="user-profile">
-                <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
-                <div class="user-info">
-                    <div class="user-greeting">Hi, Ezz</div>
-                </div>
-            </div>
-        </nav>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-    </header>
-
-    <aside class="sidebar" id="sidebar">
-        <div class="close-btn" id="closeSidebar">&times;</div>
-        <div class="user-profile">
-            <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
-            <div class="user-info">
-                <div class="user-greeting">Hi, Ezz</div>
-            </div>
+    <a class="logo-container" href="./dashboard.html">
+      <img src="../assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
+      <div class="logo-text">Prolingo</div>
+    </a>
+    <nav class="nav-links">
+      <a class="nav-link" href="../pages/dashboard.html">Home</a>
+      <a class="nav-link" href="../pages/levels.html">Lesson</a>
+      <div class="user-profile">
+        <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
+        <div class="user-info">
+          <div class="user-greeting">Hi, Ezz</div>
         </div>
-        <a href="../pages/levels.html" class="nav-item">
-            <img src="../assets/images/dashicons_welcome-learn-more.svg" alt="Learn" class="nav-icon">
-            <span>Learn</span>
-        </a>
-        <a href="../pages/practice.html" class="nav-item">
-            <img src="../assets/images/map_gym.svg" alt="Practice" class="nav-icon">
-            <span>Practice</span>
-        </a>
-        <a href="../pages/leaderboard.html" class="nav-item">
-            <img src="../assets/images/material-symbols-light_leaderboard-rounded.svg" alt="Leaderboard"
-                class="nav-icon">
-            <span>Leaderboard</span>
-        </a>
+      </div>
+    </nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </header>
 
-    </aside>
+  <aside class="sidebar" id="sidebar">
+    <div class="close-btn" id="closeSidebar">&times;</div>
+    <div class="user-profile">
+      <img src="../assets/images/person.png" alt="User Avatar" class="user-avatar">
+      <div class="user-info">
+        <div class="user-greeting">Hi, Ezz</div>
+      </div>
+    </div>
+    <a href="../pages/levels.html" class="nav-item">
+      <img src="../assets/images/dashicons_welcome-learn-more.svg" alt="Learn" class="nav-icon">
+      <span>Learn</span>
+    </a>
+    <a href="../pages/practice.html" class="nav-item">
+      <img src="../assets/images/map_gym.svg" alt="Practice" class="nav-icon">
+      <span>Practice</span>
+    </a>
+    <a href="../pages/leaderboard.html" class="nav-item">
+      <img src="../assets/images/material-symbols-light_leaderboard-rounded.svg" alt="Leaderboard" class="nav-icon">
+      <span>Leaderboard</span>
+    </a>
 
-    <!-- Main Content -->
-    <main class="container">
-        <section class="language-selection">
-            <article class="skill-level">
-                <h2>What best describes your current programming skill level?</h2>
-                <form id="skillForm" class="radio-form">
-                    <div class="radio-group">
-                        <div class="radio-option">
-                            <input type="radio" name="skill-level" value="novice" id="novice" required>
-                            <label for="novice">Novice - I am just starting to learn programming</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" name="skill-level" value="beginner" id="beginner">
-                            <label for="beginner">Beginner - I can build very basic personal apps</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" name="skill-level" value="intermediate" id="intermediate">
-                            <label for="intermediate">Intermediate - I am comfortable contributing to production
-                                codebases</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" name="skill-level" value="advanced" id="advanced">
-                            <label for="advanced">Advanced - I consider myself highly proficient in at least one
-                                programming language</label>
-                        </div>
-                        <div class="radio-option">
-                            <input type="radio" name="skill-level" value="master" id="master">
-                            <label for="master">Master - I feel I've mastered at least one programming language</label>
-                        </div>
-                    </div>
-                </form>
-            </article>
+  </aside>
 
-            <article class="language-choices">
-                <h2>Choose the language you wish to start with:</h2>
-                <div class="language-grid" id="languageGrid">
-                    <!-- Language cards will be populated here -->
-                </div>
-                <div class="form-actions">
-                    <a href="./dashboard.html" class="btn-primary" id="savePreferences">Save my preferences</a>
-                </div>
-            </article>
+  <!-- Main Content -->
+  <main class="container">
+    <section class="language-selection">
+      <article class="skill-level">
+        <h2>What best describes your current programming skill level?</h2>
+        <form id="skillForm" class="radio-form">
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" name="skill-level" value="novice" id="novice" required>
+              <label for="novice">Novice - I am just starting to learn programming</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="skill-level" value="beginner" id="beginner">
+              <label for="beginner">Beginner - I can build very basic personal apps</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="skill-level" value="intermediate" id="intermediate">
+              <label for="intermediate">Intermediate - I am comfortable contributing to production
+                codebases</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="skill-level" value="advanced" id="advanced">
+              <label for="advanced">Advanced - I consider myself highly proficient in at least one
+                programming language</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" name="skill-level" value="master" id="master">
+              <label for="master">Master - I feel I've mastered at least one programming language</label>
+            </div>
+          </div>
+        </form>
+      </article>
+
+      <article class="language-choices">
+        <h2>Choose the language you wish to start with:</h2>
+        <div class="language-grid" id="languageGrid">
+          <!-- Language cards will be populated here -->
+        </div>
+        <div class="form-actions">
+          <a href="./dashboard.html" class="btn-primary" id="savePreferences">Save my preferences</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <section class="footer-social">
+        <div class="footer-logo">
+          <img class="footer-logo-img" src="../assets/images/logo 1.png" alt="Prolingo Logo">
+          <span class="logo">Prolingo</span>
+        </div>
+
+        <p class="footer-description">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma
+        </p>
+
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-x-twitter"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-instagram"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-linkedin-in"></i> </a>
+        </div>
+      </section>
+      <div class="footer-pages">
+        <section class="footer-section">
+          <h3>Product</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Features</a>
+            <a href="#" class="footer-link">Pricing</a>
+            <a href="#" class="footer-link">Case studies</a>
+            <a href="#" class="footer-link">Reviews</a>
+            <a href="#" class="footer-link">Updates</a>
+          </div>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <section class="footer-social">
-                <div class="footer-logo">
-                    <img class="footer-logo-img" src="../assets/images/logo 1.png" alt="Prolingo Logo">
-                    <span class="logo">Prolingo</span>
-                </div>
+        <section class="footer-section">
+          <h3>Support</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Getting started</a>
+            <a href="#" class="footer-link">Help center</a>
+            <a href="#" class="footer-link">Server status</a>
+            <a href="#" class="footer-link">Report a bug</a>
+            <a href="#" class="footer-link">Chat support</a>
+          </div>
+        </section>
 
-                <p class="footer-description">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma
-                </p>
+        <section class="footer-section">
+          <h3>Downloads</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">iOS</a>
+            <a href="#" class="footer-link">Android</a>
+            <a href="#" class="footer-link">Mac</a>
+            <a href="#" class="footer-link">Windows</a>
+            <a href="#" class="footer-link">Chrome</a>
+          </div>
+        </section>
+      </div>
+    </div>
 
-                <div class="social-icons">
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-x-twitter"></i> </a>
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-facebook-f"></i> </a>
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-instagram"></i> </a>
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-linkedin-in"></i> </a>
-                </div>
-            </section>
-            <div class="footer-pages">
-                <section class="footer-section">
-                    <h3>Product</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">Features</a>
-                        <a href="#" class="footer-link">Pricing</a>
-                        <a href="#" class="footer-link">Case studies</a>
-                        <a href="#" class="footer-link">Reviews</a>
-                        <a href="#" class="footer-link">Updates</a>
-                    </div>
-                </section>
-
-                <section class="footer-section">
-                    <h3>Support</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">Getting started</a>
-                        <a href="#" class="footer-link">Help center</a>
-                        <a href="#" class="footer-link">Server status</a>
-                        <a href="#" class="footer-link">Report a bug</a>
-                        <a href="#" class="footer-link">Chat support</a>
-                    </div>
-                </section>
-
-                <section class="footer-section">
-                    <h3>Downloads</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">iOS</a>
-                        <a href="#" class="footer-link">Android</a>
-                        <a href="#" class="footer-link">Mac</a>
-                        <a href="#" class="footer-link">Windows</a>
-                        <a href="#" class="footer-link">Chrome</a>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <p>
-                Copyright © 2025 Prolingo | All Rights Reserved |
-                <a href="#" class="legal-link">Terms and Conditions</a> |
-                <a href="#" class="legal-link">Privacy Policy</a>
-            </p>
-        </div>
-    </footer>
+    <div class="copyright">
+      <p>
+        Copyright © 2025 Prolingo | All Rights Reserved |
+        <a href="#" class="legal-link">Terms and Conditions</a> |
+        <a href="#" class="legal-link">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
 </body>
 
 </html>

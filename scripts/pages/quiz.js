@@ -138,9 +138,8 @@ function loadQuestion() {
 
 function updateProgress() {
   // Update question counter text
-  questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${
-    questions.length
-  }`;
+  questionCounter.textContent = `Question ${currentQuestionIndex + 1} of ${questions.length
+    }`;
 
   // Update progress bar width
   const progressPercentage =
@@ -182,7 +181,7 @@ function selectAnswer(e) {
   });
 
   nextBtn.style.display = "block";
-  
+
 }
 
 function showResults() {

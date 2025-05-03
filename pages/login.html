@@ -2,174 +2,173 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prolingo - Sign In</title>
-    <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../styles/components/footer.css">
-    <link rel="stylesheet" href="../styles/components/navbar.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/pages/login.css">
-    <script src="../scripts/main.js" defer></script>
-    <script src="../scripts/pages/login.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prolingo - Sign In</title>
+  <link rel="icon" href="../assets/images/tabLogo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../styles/components/footer.css">
+  <link rel="stylesheet" href="../styles/components/navbar.css">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/pages/login.css">
+  <script src="../scripts/main.js" defer></script>
+  <script src="../scripts/pages/login.js" defer></script>
 </head>
 
 <body>
-    <!-- Start Header -->
-    <header class="navbar">
+  <!-- Start Header -->
+  <header class="navbar">
 
-        <a class="logo-container" href="/index.html">
-            <img src="../assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
-            <div class="logo-text">Prolingo</div>
-        </a>
-        <nav class="nav-links">
-            <a class="nav-link" href="/index.html">Home</a>
-            <a class="nav-link" href="#contact">Contact</a> <!-- Placeholder -->
-            <a href="/pages/login.html" class="btn-outline">Login</a>
-            <a href="/pages/signup.html" class="btn-primary">Sign Up</a>
-        </nav>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-    </header>
+    <a class="logo-container" href="/index.html">
+      <img src="../assets/images/logo 1.png" alt="Prolingo Logo" class="logo-img">
+      <div class="logo-text">Prolingo</div>
+    </a>
+    <nav class="nav-links">
+      <a class="nav-link" href="/index.html">Home</a>
+      <a class="nav-link" href="#contact">Contact</a> <!-- Placeholder -->
+      <a href="/pages/login.html" class="btn-outline">Login</a>
+      <a href="/pages/signup.html" class="btn-primary">Sign Up</a>
+    </nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </header>
 
-    <aside class="sidebar" id="sidebar">
-        <div class="close-btn" id="closeSidebar">&times;</div>
-        <a href="index.html">Home</a>
-        <a href="#contact">Contact</a>
-        <a href="/pages/login.html">Login</a>
-        <a href="/pages/signup.html">Sign Up</a>
-    </aside>
-    <!-- End Header -->
-    <div class="container">
-        <main>
-            <section class="signin-container">
-                <div class="signin-header">
-                    <img class="signin-avatar" src="../assets/images/welcome.png" alt="Welcome Avatar">
-                    <h1>Welcome back!</h1>
-                    <p class="signin-subtitle">Sign in to continue your language journey</p>
-                </div>
+  <aside class="sidebar" id="sidebar">
+    <div class="close-btn" id="closeSidebar">&times;</div>
+    <a href="index.html">Home</a>
+    <a href="#contact">Contact</a>
+    <a href="/pages/login.html">Login</a>
+    <a href="/pages/signup.html">Sign Up</a>
+  </aside>
+  <!-- End Header -->
+  <div class="container">
+    <main>
+      <section class="signin-container">
+        <div class="signin-header">
+          <img class="signin-avatar" src="../assets/images/welcome.png" alt="Welcome Avatar">
+          <h1>Welcome back!</h1>
+          <p class="signin-subtitle">Sign in to continue your language journey</p>
+        </div>
 
-                <div class="success-message" id="successMessage">
-                    Login successful! Redirecting to dashboard...
-                </div>
+        <div class="success-message" id="successMessage">
+          Login successful! Redirecting to dashboard...
+        </div>
 
-                <form class="signin-form" id="signinForm">
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-input" placeholder="example@email.com" >
-                        <div class="error-message" id="emailError">Please enter a valid email address</div>
-                    </div>
+        <form class="signin-form" id="signinForm">
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-input" placeholder="example@email.com">
+            <div class="error-message" id="emailError">Please enter a valid email address</div>
+          </div>
 
-                    <div class="form-group">
-                        <label for="password" class="form-label">Password</label>
-                        <div class="password-input-container">
-                            <span class="password-icon lock-icon">
-                                <i class="fa-solid fa-lock"></i> </span>
-                            <input type="password" id="password" class="password-input"
-                                placeholder="Enter your password" >
-                        </div>
-                        <div class="error-message" id="passwordError">Password is required</div>
-                    </div>
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <div class="password-input-container">
+              <span class="password-icon lock-icon">
+                <i class="fa-solid fa-lock"></i> </span>
+              <input type="password" id="password" class="password-input" placeholder="Enter your password">
+            </div>
+            <div class="error-message" id="passwordError">Password is required</div>
+          </div>
 
-                    <div class="form-options">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember">
-                            <label for="remember">Remember me</label>
-                        </div>
-                        <a href="#" class="forgot-password">Forgot password?</a>
-                    </div>
+          <div class="form-options">
+            <div class="remember-me">
+              <input type="checkbox" id="remember">
+              <label for="remember">Remember me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
 
-                    <button type="submit" class="btn-primary" style="width: 100%; margin-bottom: 16px;">Login</button>
+          <button type="submit" class="btn-primary" style="width: 100%; margin-bottom: 16px;">Login</button>
 
-                    <div class="divider">
-                        <div class="divider-line"></div>
-                        <span class="divider-text">Or</span>
-                        <div class="divider-line"></div>
-                    </div>
+          <div class="divider">
+            <div class="divider-line"></div>
+            <span class="divider-text">Or</span>
+            <div class="divider-line"></div>
+          </div>
 
-                    <button type="button" class="social-signin-btn" id="googleSignIn">
-                        <i class="fa-brands fa-google"></i> Login with Google
-                    </button>
+          <button type="button" class="social-signin-btn" id="googleSignIn">
+            <i class="fa-brands fa-google"></i> Login with Google
+          </button>
 
-                    <button type="button" class="social-signin-btn" id="facebookSignIn">
-                        <i class="fa-brands fa-facebook-f"></i> Login with Facebook
-                    </button>
+          <button type="button" class="social-signin-btn" id="facebookSignIn">
+            <i class="fa-brands fa-facebook-f"></i> Login with Facebook
+          </button>
 
-                    <p class="signup-link">Don't have an account? <a href="/signup.html">Sign up</a></p>
-                </form>
-            </section>
-        </main>
+          <p class="signup-link">Don't have an account? <a href="/signup.html">Sign up</a></p>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <section class="footer-social">
+        <div class="footer-logo">
+          <img class="footer-logo-img" src="../assets/images/logo 1.png" alt="Prolingo Logo">
+          <span class="logo">Prolingo</span>
+        </div>
+
+        <p class="footer-description">
+          Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma
+        </p>
+
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-x-twitter"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-facebook-f"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-instagram"></i> </a>
+          <a href="#" class="social-icon">
+            <i class="fa-brands fa-linkedin-in"></i> </a>
+        </div>
+      </section>
+      <div class="footer-pages">
+        <section class="footer-section">
+          <h3>Product</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Features</a>
+            <a href="#" class="footer-link">Pricing</a>
+            <a href="#" class="footer-link">Case studies</a>
+            <a href="#" class="footer-link">Reviews</a>
+            <a href="#" class="footer-link">Updates</a>
+          </div>
+        </section>
+
+        <section class="footer-section">
+          <h3>Support</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Getting started</a>
+            <a href="#" class="footer-link">Help center</a>
+            <a href="#" class="footer-link">Server status</a>
+            <a href="#" class="footer-link">Report a bug</a>
+            <a href="#" class="footer-link">Chat support</a>
+          </div>
+        </section>
+
+        <section class="footer-section">
+          <h3>Downloads</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">iOS</a>
+            <a href="#" class="footer-link">Android</a>
+            <a href="#" class="footer-link">Mac</a>
+            <a href="#" class="footer-link">Windows</a>
+            <a href="#" class="footer-link">Chrome</a>
+          </div>
+        </section>
+      </div>
     </div>
 
-    <footer>
-        <div class="footer-content">
-            <section class="footer-social">
-                <div class="footer-logo">
-                    <img class="footer-logo-img" src="../assets/images/logo 1.png" alt="Prolingo Logo">
-                    <span class="logo">Prolingo</span>
-                </div>
-
-                <p class="footer-description">
-                    Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam mauris sed ma
-                </p>
-
-                <div class="social-icons">
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-x-twitter"></i> </a>
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-facebook-f"></i> </a>
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-instagram"></i> </a>
-                    <a href="#" class="social-icon">
-                        <i class="fa-brands fa-linkedin-in"></i> </a>
-                </div>
-            </section>
-            <div class="footer-pages">
-                <section class="footer-section">
-                    <h3>Product</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">Features</a>
-                        <a href="#" class="footer-link">Pricing</a>
-                        <a href="#" class="footer-link">Case studies</a>
-                        <a href="#" class="footer-link">Reviews</a>
-                        <a href="#" class="footer-link">Updates</a>
-                    </div>
-                </section>
-
-                <section class="footer-section">
-                    <h3>Support</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">Getting started</a>
-                        <a href="#" class="footer-link">Help center</a>
-                        <a href="#" class="footer-link">Server status</a>
-                        <a href="#" class="footer-link">Report a bug</a>
-                        <a href="#" class="footer-link">Chat support</a>
-                    </div>
-                </section>
-
-                <section class="footer-section">
-                    <h3>Downloads</h3>
-                    <div class="footer-links">
-                        <a href="#" class="footer-link">iOS</a>
-                        <a href="#" class="footer-link">Android</a>
-                        <a href="#" class="footer-link">Mac</a>
-                        <a href="#" class="footer-link">Windows</a>
-                        <a href="#" class="footer-link">Chrome</a>
-                    </div>
-                </section>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <p>
-                Copyright © 2025 Prolingo | All Rights Reserved |
-                <a href="#" class="legal-link">Terms and Conditions</a> |
-                <a href="#" class="legal-link">Privacy Policy</a>
-            </p>
-        </div>
-    </footer>
+    <div class="copyright">
+      <p>
+        Copyright © 2025 Prolingo | All Rights Reserved |
+        <a href="#" class="legal-link">Terms and Conditions</a> |
+        <a href="#" class="legal-link">Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
 </body>
 
 </html>

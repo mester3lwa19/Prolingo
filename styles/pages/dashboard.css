@@ -16,6 +16,7 @@
   padding: 37px 40px;
   flex: 1;
 }
+
 .dashboard-content {
   display: flex;
   flex-direction: column;
@@ -93,6 +94,7 @@
   background-size: cover;
   background-position: center;
 }
+
 .calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -119,11 +121,13 @@
   flex-direction: column;
   gap: 20px;
 }
+
 .stats-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+
 .daily-quest,
 .profile-stats,
 .continue-learning {
@@ -131,6 +135,7 @@
   padding: 20px;
   border-radius: 12px;
 }
+
 .daily-quest h4,
 .profile-stats h4,
 .continue-learning h4,
@@ -175,10 +180,12 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
   .streak-grid {
 
     gap: 16px;
   }
+
   .streak-grid .day {
     width: 30px;
     height: 30px;

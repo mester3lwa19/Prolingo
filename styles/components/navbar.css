@@ -48,6 +48,7 @@ header.navbar {
   position: relative;
   line-height: 18px;
 }
+
 .nav-link.active {
   color: var(--primary-color);
   font-weight: 600;
@@ -71,6 +72,7 @@ header.navbar {
 .nav-link:hover::after {
   width: 100%;
 }
+
 .nav-item {
   display: flex;
   align-items: center;
@@ -104,6 +106,7 @@ header.navbar {
 .nav-item:hover::after {
   width: 100%;
 }
+
 .user-profile {
   display: flex;
   align-items: start;
@@ -145,6 +148,7 @@ header.navbar {
 .edit-profile-link:hover {
   color: #fff;
 }
+
 .hamburger {
   display: none;
   font-size: 2rem;

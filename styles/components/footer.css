@@ -15,13 +15,14 @@ footer {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.footer-section  {
-display: flex;
+.footer-section {
+  display: flex;
   flex-direction: column;
   gap: 24px;
   align-items: start;
   justify-content: start;
 }
+
 .footer-section h3 {
   font-size: var(--font-20);
   text-align: left;
