@@ -4,11 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // leaderboard.js
   const leaderboard = [
     { name: "Malak Amr", score: 4050, sign: 7 },
-    { name: "Mariam Islam", score: 3500, sign: 9 },
+    { name: "Mariam Islam", score: 5500, sign: 9 },
     { name: "Fayrouz Tarek", score: 5000, sign: 8 },
     { name: "Karim Wael", score: 5500, sign: 7 },
-    { name: "Ali Khaled", score: 115075, sign: 6 },
+    { name: "Ali Khaled", score: 3075, sign: 6 },
+    { name: "Mathew Mousa", score: 3075, sign: 6 },
 
+    
   ];
 
   // Sort by score descending

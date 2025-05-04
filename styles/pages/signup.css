@@ -22,7 +22,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: hidden;/* prevent horizontal scroll*/
 }
 
 /* Layout */

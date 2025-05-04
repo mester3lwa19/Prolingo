@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {//Waits for the full HTML to load before running the script
+
   // Form elements
   const form = document.getElementById("signupForm");
   const usernameInput = document.getElementById("username");
@@ -9,7 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Form validation
   form.addEventListener("submit", function (e) {
-    e.preventDefault();
+    e.preventDefault();//Prevents the default page reload when the form is submitted 
+    //Runs validation logic
     let isValid = true;
 
     if (usernameInput.value.length < 4) {
@@ -59,6 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(() => {
         window.location.href = "/pages/language_selection.html";
       }, 2000);
+      // If all fields are valid:
+      // Hide the form
+      // Show the success message
+      // Redirect to another page after 2 seconds
     }
   });
 
@@ -72,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function hideError(input, errorId) {
     const errorElement = document.getElementById(errorId);
     errorElement.style.display = "none";
-    input.classList.remove("error");
+    input.classList.remove("error");//Hides the error message and removes the red border
   }
 
   // Social signup interactions

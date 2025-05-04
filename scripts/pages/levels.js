@@ -6,7 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   menuToggle.addEventListener("click", function () {
     sidebar.classList.toggle("active");
-  });
+  });//Toggle Mechanism: When the hamburger menu icon is clicked,
+  //  it adds or removes the active class to the sidebar (#sidebar).
+  //  This will typically trigger CSS to show or hide the sidebar.
 
   // Level data
   const levels = [
@@ -50,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       category: "css",
       title: "Selectors",
       icon: "../assets/images/css-icon.svg",
-      progress: 0,
+      progress: 100,
     },
     {
       number: 7,
@@ -99,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
       category: "javascript",
       title: "DOM",
       icon: "../assets/images/javascript-logo-svgrepo-com.svg",
-      progress: 0,
+      progress: 100,
     },
     {
       number: 14,
@@ -124,6 +126,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Render levels
   function renderLevels(category = "all") {
     levelsGrid.innerHTML = "";
+// Purpose: This line clears the content of the levelsGrid element before re-rendering the levels.
+// It ensures that the previous levels are removed before displaying the new filtered levels.
+// Without this, old levels would accumulate and the page would keep displaying previously rendered levels,
+// which could lead to confusion or clutter on the screen.
 
     const filteredLevels =
       category === "all"
@@ -157,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 500);
 
         // In a real app, this would navigate to the lesson
-        // alert(`Starting Level ${level.number}: ${level.title}`);
+        //alert(`Starting Level ${level.number}: ${level.title}`);
         window.location.href = 'level.html';
       });
 
@@ -195,7 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Simulate progress updates (for demo purposes)
+  // Simulate progress updates ( demo )
   setTimeout(() => {
     const progressBars = document.querySelectorAll(".level-progress-bar");
     progressBars.forEach((bar) => {
@@ -213,3 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }, 500);
 });
+// Simulating Progress Updates: After 500ms, the script animates the progress bars.
+// It grabs all the elements with the class level-progress-bar.
+// For each progress bar, it gradually increases the width from 0 to the target width (which is based on the level.progress value).
+// This is done by using setInterval(), updating the width every 20ms, and stopping when the target width is reached.

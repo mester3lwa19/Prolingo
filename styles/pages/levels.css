@@ -35,10 +35,10 @@ body {
   background: radial-gradient(ellipse 46.26% 46.26% at 96.37% 50.11%,
       rgba(56, 195, 204, 0.3) 0%,
       rgba(28, 97.5, 102, 0.3) 100%);
-  box-shadow: 15px 15px 15px;
+  box-shadow: 15px 15px 15px; /*Adds a shadow around the gradient for depth*/
   border-radius: 9999px;
   filter: blur(7.5px);
-  z-index: -1;
+  z-index: -1; /* Ensures it stays behind the content*/
   transform: rotate(180deg);
 }
 
@@ -54,7 +54,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  overflow-y: auto;
+  overflow-y: auto;  /*Allows vertical scrolling when content overflows*/
 }
 
 .content-wrapper {
@@ -94,6 +94,10 @@ body {
   gap: 24px;
   margin-top: 40px;
 }
+/*responsive grid layout. 
+The grid will automatically adjust the number of columns depending on the screen size,
+with each column having a minimum width of 280px. It uses a 24px gap between grid items.
+*/
 
 .level-card {
   border: 1px solid var(--border-color);
@@ -132,7 +136,7 @@ body {
 .level-card:hover::before {
   opacity: 1;
 }
-
+/* Level Card Content Styles */
 .level-header {
   align-items: center;
   gap: 24px;
@@ -149,6 +153,7 @@ body {
 .level-icon {
   width: 89px;
   transition: transform 0.3s ease;
+
 }
 
 .level-card:hover .level-icon {
@@ -169,7 +174,7 @@ body {
   font-weight: 500;
   text-align: center;
 }
-
+/* Defines the container for the progress bar with a rounded border and light background */
 .level-progress {
   height: 6px;
   background-color: rgba(250, 255, 255, 0.2);
@@ -177,7 +182,7 @@ body {
   margin-top: 8px;
   overflow: hidden;
 }
-
+/* The actual progress bar, which will fill the container when the width changes. The transition makes it animate smoothly */
 .level-progress-bar {
   height: 100%;
   background-color: var(--primary-color);
